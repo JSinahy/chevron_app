@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -40,4 +43,6 @@ dependencies {
     testImplementation(Dependencies.androidJUnit)
     androidTestImplementation(Dependencies.androidExtUnit)
     androidTestImplementation(Dependencies.androidEspresso)
+
+    implementation(project(Modules.moduleCommon))
 }

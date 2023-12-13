@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Color Delo/Chevron -->
+    <color name="azul_globo">#004CA0</color>
+    <color name="azul_boton">#009EED</color>
+    <color name="azul_boton_oscuro">#004CA0</color>
+    <color name="turqueza">#00CAF9</color>
+    <color name="delo_gradient_start">#0075C4</color>
+    <color name="delo_gradient_end">#003C94</color>
+    <color name="generic_border_highlight_blur_color">#00D4FF</color>
+</resources>
