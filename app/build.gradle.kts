@@ -1,7 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -18,13 +20,21 @@ android {
         testInstrumentationRunner = General.testInstrumentationRunner
     }
 
+    signingConfigs {
+        create("release") {
+            keyAlias = "chevron"
+            keyPassword = "Chevron*2022"
+            storeFile = file("trend.jks")
+            storePassword = "Chevron*2022"
+        }
+    }
+
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("release")
+            isDebuggable = false
         }
     }
     compileOptions {
@@ -52,6 +62,9 @@ dependencies {
     testImplementation(Dependencies.androidJUnit)
     androidTestImplementation(Dependencies.androidExtUnit)
     androidTestImplementation(Dependencies.androidEspresso)
+
+    implementation(Dependencies.androidHiltCore)
+    kapt(Dependencies.androidHiltCompiler)
 
     implementation(project(Modules.moduleCommon))
     implementation(project(Modules.moduleAccounts))

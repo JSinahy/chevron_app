@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="txt_init_session">INICIAR SESION</string>
+    <string name="text_sigin">INGRESA</string>
+    <string name="label_cellphone_number">TU NÚMERO TELEFÓNICO\nPARA INICIAR SESIÓN</string>
+    <string name="text_next">SIGUIENTE</string>
+    <string name="text_write">ESCRIBE</string>
+    <string name="label_write_code">el código que recibiste en\ntu teléfono en un mensaje\nde texto para ingresar</string>
+    <string name="text_middle_dash">-</string>
+    <string name="text_code_not_received">¿No has recibido tu código?</string>
+    <string name="text_create_here">Genera uno aquí</string>
+    <string name="text_terms_and_conditions">Acepto términos y condiciones</string>
+    <string name="text_privacity_advice">Acepto el aviso de privacidad</string>
+    <string name="text_profile_select">SELECCIONA</string>
+    <string name="text_profile_role">EL TIPO DE EXPERTO</string>
+    <string name="text_profile_role_complement">QUE QUIERES SER</string>
+    <string name="text_example_name">Felipe Alberto\nLópez Urrutia</string>
+    <string name="text_example_brand">Experto Havoline</string>
+    <string name="text_profile_option">Perfil</string>
+    <string name="text_time_study">Tiempo de\nestudio</string>
+    <string name="text_study_time_value">15</string>
+    <string name="text_close_session">Cerrar sesión</string>
+    <string name="text_app_name">Experto Chevron</string>
 </resources>

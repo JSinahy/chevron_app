@@ -13,6 +13,7 @@ object Versions {
     // Retrofit
     val versionAndroidRetrofit = "2.9.0"
     val versionAndroidInterceptor = "4.9.1"
+    val androidOkHttp3 = "4.9.3"
 
     // Room
     val versionAndroidRoom = "2.6.1"
@@ -20,9 +21,20 @@ object Versions {
     // Lifecycle
     val versionAndroidLifeCycle = "2.6.2"
     val versionAndroidLifecycleExtension = "2.2.0"
+    val androidLifeCycle_Activity = "1.2.2"
 
     // Logging
     val versionAndroidHttp3Logging = "4.9.1"
 
+    // Hilt
+    val androidHilt = "2.49"
 
+    // Google service
+    val androidServiceLocation = "21.0.1"
+
+    // Navigation
+    val androidNavigation = "2.7.6"
+
+    // Glide
+    var androidGlide = "4.16.0"
 }

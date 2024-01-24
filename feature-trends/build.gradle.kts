@@ -40,9 +40,11 @@ dependencies {
     implementation(Dependencies.androidCore)
     implementation(Dependencies.androidAppCompat)
     implementation(Dependencies.androidMaterial)
+    implementation(Dependencies.androidServiceLocation)
     testImplementation(Dependencies.androidJUnit)
     androidTestImplementation(Dependencies.androidExtUnit)
     androidTestImplementation(Dependencies.androidEspresso)
 
     implementation(project(Modules.moduleCommon))
+    implementation(project(Modules.moduleAccounts))
 }

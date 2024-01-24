@@ -1,6 +1,9 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -30,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -37,7 +43,28 @@ dependencies {
     implementation(Dependencies.androidCore)
     implementation(Dependencies.androidAppCompat)
     implementation(Dependencies.androidMaterial)
+    implementation(Dependencies.androidConstraitLayout)
     testImplementation(Dependencies.androidJUnit)
     androidTestImplementation(Dependencies.androidExtUnit)
     androidTestImplementation(Dependencies.androidEspresso)
+
+    implementation(project(Modules.moduleCommon))
+    implementation(project(Modules.moduleContent))
+
+    // Hilt
+    implementation(Dependencies.androidHiltCore)
+    kapt(Dependencies.androidHiltCompiler)
+
+    // Lifecycle
+    implementation(Dependencies.androidLifeCycleLivedata)
+    implementation(Dependencies.androidLifeCycleViewModel)
+    implementation(Dependencies.androidLifeCycle_Activity)
+
+    // Retrofit
+    implementation(Dependencies.androidRetrofit)
+    implementation(Dependencies.androidGson)
+    implementation(Dependencies.androidInterceptor)
+    implementation(Dependencies.androidOkhttp)
+    implementation(Dependencies.androidCoroutinesKotlinx)
+    implementation(Dependencies.androidCoroutinesKotlinxCore)
 }

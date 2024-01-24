@@ -1,12 +1,12 @@
-package com.trend.chevron.ui.spalsh
+package com.trend.chevron.ui.splash
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
-import com.trend.chevron.R
-import com.trend.chevron.data.openActivity
 import com.trend.chevron.databinding.ActivityMainBinding
+import com.trend.feature_authentication.ui.cellphone.LoginCellphoneActivity
+import com.trend.feature_common.extensiones.openActivity
 import com.trend.feature_trends.ui.SelectProfileActivity
 
 class MainActivity : AppCompatActivity(), OnClickListener {
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     override fun onClick(p0: View?) {
         when(p0) {
             binding.btnSignin -> {
-
+                this.openActivity(LoginCellphoneActivity::class.java)
             }
             binding.btnSignup -> {
                 this.openActivity(SelectProfileActivity::class.java)

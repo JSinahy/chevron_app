@@ -5,41 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.trend.feature_trends.ui.SelectProfileActivity">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <ProgressBar
             android:id="@+id/progress_bar"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
             android:layout_centerInParent="true"
             android:translationZ="99dp" />
-
         <RelativeLayout
             android:id="@+id/relativeHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <ImageView
                 android:id="@+id/image_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:src="@drawable/generic_img_select_header" />
-
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/txtTheTypeExpert"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 android:fontFamily="@font/gotham_book"
-                android:text="SELECCIONA"
+                android:text="@string/text_profile_select"
                 android:textColor="@android:color/white" />
-
             <TextView
                 android:id="@+id/txtTheTypeExpert"
                 android:layout_width="wrap_content"
@@ -48,9 +42,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/gotham_bold"
-                android:text="EL TIPO DE EXPERTO"
+                android:text="@string/text_profile_role"
                 android:textColor="@android:color/white" />
-
             <TextView
                 android:id="@+id/txtWannaBe"
                 android:layout_width="wrap_content"
@@ -59,28 +52,23 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="32dp"
                 android:fontFamily="@font/gotham_book"
-                android:text="QUE QUIERES SER"
+                android:text="@string/text_profile_role_complement"
                 android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent" />
-
         </RelativeLayout>
-
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:src="@drawable/generic_img_select_footer" />
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/relativeHeader"
             app:layout_constraintEnd_toEndOf="parent">
-
             <TableLayout
                 android:id="@+id/tableSelectBtns"
                 android:layout_width="wrap_content"
@@ -89,7 +77,6 @@
                 android:layout_marginTop="32dp">
 
                 <TableRow>
-
                     <ImageView
                         android:id="@+id/imageHavoline"
                         android:layout_width="120dp"
@@ -99,7 +86,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_marginBottom="8dp"
                         android:src="@drawable/generic_img_select_btn_havoline" />
-
                     <ImageView
                         android:id="@+id/imageHavoline4t"
                         android:layout_width="120dp"
@@ -110,9 +96,7 @@
                         android:layout_marginBottom="8dp"
                         android:src="@drawable/generic_img_select_btn_havoline_4t" />
                 </TableRow>
-
                 <TableRow>
-
                     <ImageView
                         android:id="@+id/imageDelo"
                         android:layout_width="120dp"
@@ -122,7 +106,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_marginBottom="8dp"
                         android:src="@drawable/generic_img_select_btn_delo" />
-
                     <ImageView
                         android:id="@+id/imageTexaco"
                         android:layout_width="120dp"
@@ -135,15 +118,14 @@
                         android:visibility="gone" />
                 </TableRow>
             </TableLayout>
-
             <RelativeLayout
+                android:layout_marginTop="@dimen/_16sdp"
                 android:id="@+id/containcer_checkbox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tableSelectBtns"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp">
-
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp">
                 <CheckBox
                     android:id="@+id/checkBox"
                     android:layout_width="wrap_content"
@@ -151,38 +133,36 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="32dp"
+                    android:layout_marginStart="@dimen/_32sdp"
                     android:fontFamily="@font/gotham_book"
                     android:textColor="#003B92" />
-
                 <TextView
                     android:id="@+id/text_terms"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
                     android:layout_toEndOf="@id/checkBox"
                     android:fontFamily="@font/gotham_book"
-                    android:text="Acepto términos y condiciones"
+                    android:text="@string/text_terms_and_conditions"
                     android:textColor="#003B92"
 
                     />
-
                 <TextView
                     android:id="@+id/text_privacy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/text_terms"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
                     android:layout_toEndOf="@id/checkBox"
                     android:fontFamily="@font/gotham_book"
-                    android:text="Acepto el aviso de privacidad"
+                    android:text="@string/text_privacity_advice"
                     android:textColor="#003B92" />
-
             </RelativeLayout>
 
-
             <ImageView
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_alignParentBottom="true"
                 android:id="@+id/img_logo"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -191,9 +171,6 @@
                 android:layout_marginTop="16dp"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/generic_img_logo_blue_chevron" />
-
         </RelativeLayout>
-
     </RelativeLayout>
-
 </FrameLayout>

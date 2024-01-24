@@ -8,4 +8,8 @@
     <color name="delo_gradient_start">#0075C4</color>
     <color name="delo_gradient_end">#003C94</color>
     <color name="generic_border_highlight_blur_color">#00D4FF</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="purple_700">#FF3700B3</color>
 </resources>

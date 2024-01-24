@@ -16,6 +16,7 @@ object Dependencies {
     val androidRetrofit by lazy { "com.squareup.retrofit2:retrofit:${Versions.versionAndroidRetrofit}" }
     val androidGson by lazy { "com.squareup.retrofit2:converter-gson:${Versions.versionAndroidRetrofit}" }
     val androidInterceptor by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.versionAndroidInterceptor}" }
+    val androidOkhttp by lazy { "com.squareup.okhttp3:okhttp:${Versions.androidOkHttp3}" }
 
     // Room
     val androidRoomRuntime by lazy { "androidx.room:room-runtime:${Versions.versionAndroidRoom}" }
@@ -29,8 +30,22 @@ object Dependencies {
     val androidLifeCycleLivedata by lazy { "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.versionAndroidLifeCycle}" }
     val androidLifeCycleExtensions by lazy { "androidx.lifecycle:lifecycle-extensions:${Versions.versionAndroidLifecycleExtension}" }
     val androidLifeCycleCommon by lazy { "androidx.lifecycle:lifecycle-common:${Versions.versionAndroidLifeCycle}" }
+    val androidLifeCycle_Activity by lazy { "androidx.activity:activity-ktx:${Versions.androidLifeCycle_Activity}" }
 
     // Logging
     val androidHttp3Loggin by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.versionAndroidHttp3Logging}" }
 
+    // Hilt
+    val androidHiltCore by lazy { "com.google.dagger:hilt-android:${Versions.androidHilt}" }
+    val androidHiltCompiler by lazy { "com.google.dagger:hilt-compiler:${Versions.androidHilt}" }
+
+    // Google Service
+    val androidServiceLocation by lazy { "com.google.android.gms:play-services-location:${Versions.androidServiceLocation}" }
+
+    // Navigation
+    val androidNavigationFragment by lazy { "androidx.navigation:navigation-fragment-ktx:${Versions.androidNavigation}" }
+    val androidNavigationUI by lazy { "androidx.navigation:navigation-ui-ktx:${Versions.androidNavigation}" }
+
+    // Glide
+    val androidGlide by lazy { "com.github.bumptech.glide:glide:${Versions.androidGlide}" }
 }

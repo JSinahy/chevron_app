@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_content"
+    tools:context="com.trend.feature_accounts.ui.create.CreateAccountActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/havoline_texture_background" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:adjustViewBounds="true"
+        android:id="@+id/account_header_h"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/havoline_img_header" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:adjustViewBounds="true"
+        android:id="@+id/account_footer_h"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/havoline_img_footer_account"
+        android:layout_alignParentBottom="true"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="42dp"
+        android:src="@drawable/ic_profile"
+        android:visibility="gone" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginBottom="42dp"
+        android:id="@+id/text_profile"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/img_profile"
+        android:text="Perfil"
+        android:textColor="@color/white"
+        android:layout_marginTop="42dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/gotham_bold"
+        android:layout_marginStart="16dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:visibility="gone"
+        android:id="@+id/img_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:layout_toStartOf="@+id/text_edit"
+        android:layout_marginTop="45dp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:visibility="gone"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/text_edit"
+        android:layout_marginTop="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar"
+        android:textColor="@color/white"
+        android:fontFamily="@font/gotham_bold"
+        android:textSize="18sp"
+        android:layout_alignParentEnd="true"/>
+
+    <ScrollView
+        android:layout_below="@+id/img_profile"
+        android:id="@+id/scrollForm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+
+                android:id="@+id/img_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                app:srcCompat="@drawable/havoline_img_logo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgSlogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                app:srcCompat="@drawable/havoline_img_slogan" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textHeaderTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/gotham_bold"
+                android:text="ACCESO"
+                android:textAlignment="center"
+                android:textColor="#FFD200"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/gotham_book"
+                android:text="PARA NUEVOS INTEGRANTES"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/textName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/generic_textview_background_white"
+                android:fontFamily="@font/gotham_book"
+                android:hint="Nombre"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/text_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/generic_textview_background_white"
+                android:fontFamily="@font/gotham_book"
+                android:hint="Apellidos"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/birthday_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/generic_textview_background_white">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spn_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/gotham_book"
+                    android:spinnerMode="dialog" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/country_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/generic_textview_background_white">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spn_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/gotham_book"
+                    android:spinnerMode="dialog" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/city_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/generic_textview_background_white">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spn_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/gotham_book"
+                    android:spinnerMode="dialog" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cellphone_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/generic_textview_background_white">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spn_country_phone"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/gotham_book"
+                    android:spinnerMode="dialog" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/textPersonalPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_toEndOf="@+id/spn_country_phone"
+                    android:background="@null"
+                    android:fontFamily="@font/gotham_book"
+                    android:hint="Teléfono personal"
+                    android:inputType="phone"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/textEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/generic_textview_background_white"
+                android:fontFamily="@font/gotham_book"
+                android:hint="Correo electrónico"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/layoutSS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/generic_textview_background_white"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spn_ss"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/gotham_book"
+                    android:spinnerMode="dialog" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/textPOS"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/generic_textview_background_white"
+                android:fontFamily="@font/gotham_book"
+                android:hint="Punto de venta"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/time_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/generic_textview_background_white">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spn_study_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/gotham_book"
+                    android:spinnerMode="dialog" />
+            </RelativeLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/generic_black_button_border_yellow"
+                android:text="ENVIAR REGISTRO"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/generic_black_button_border_yellow"
+                android:text="ELIMINAR PERFIL"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
+
+</RelativeLayout>
