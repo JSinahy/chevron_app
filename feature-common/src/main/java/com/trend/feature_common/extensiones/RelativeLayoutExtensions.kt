@@ -10,8 +10,28 @@ fun RelativeLayout.setBackgroundDelo() {
 }
 
 @SuppressLint("UseCompatLoadingForDrawables")
+fun RelativeLayout.setBackgroundBlue() {
+    background = resources.getDrawable(R.drawable.generic_background_blue, null)
+}
+
+@SuppressLint("UseCompatLoadingForDrawables")
 fun RelativeLayout.setBackgroundTexaco() {
     background = resources.getDrawable(R.drawable.texaco_gradient_background, null)
+}
+
+@SuppressLint("UseCompatLoadingForDrawables")
+fun RelativeLayout.setBackgroundRed() {
+    background = resources.getDrawable(R.drawable.generic_background_red, null)
+}
+
+@SuppressLint("UseCompatLoadingForDrawables")
+fun RelativeLayout.setBackgroundHavoline4t() {
+    background = resources.getDrawable(R.drawable.havoline4t_texture_background, null)
+}
+
+@SuppressLint("UseCompatLoadingForDrawables")
+fun RelativeLayout.setBackgroundDarkRed() {
+    background = resources.getDrawable(R.drawable.generic_background_dark_red, null)
 }
 
 @SuppressLint("UseCompatLoadingForDrawables")

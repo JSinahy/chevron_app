@@ -75,4 +75,5 @@ dependencies {
     implementation(Dependencies.androidGlide)
 
     implementation(project(Modules.moduleCommon))
+    implementation(project(Modules.moduleTests))
 }

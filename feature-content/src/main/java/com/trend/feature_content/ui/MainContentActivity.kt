@@ -36,6 +36,7 @@ class MainContentActivity : AppCompatActivity(), ApplyUIMainContentDelegate by A
         binding = ActivityMainContentBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.includeMainContent.toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         applyUIMainContent()
         setupPressCallback()
         setupListener()
@@ -71,6 +72,7 @@ class MainContentActivity : AppCompatActivity(), ApplyUIMainContentDelegate by A
     }
 
     private fun initSetup() {
+        binding.includeMainContent.toolbar.title = " "
         binding.apply {
             actionBarToggle = ActionBarDrawerToggle(this@MainContentActivity, drawerLayout, binding.includeMainContent.toolbar, 0, 0)
             drawerLayout.addDrawerListener(actionBarToggle)

@@ -6,9 +6,9 @@
     <com.google.android.material.appbar.AppBarLayout
         android:background="@color/black"
         android:id="@+id/moviesAppBar"
-        app:elevation="2dp"
+        app:elevation="4dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize">
         <androidx.appcompat.widget.Toolbar
             app:navigationIcon="@drawable/ic_menu"
             android:id="@+id/toolbar"

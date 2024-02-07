@@ -16,7 +16,7 @@ object LayoutUtils {
     }
 
     fun getItemStopHavoline4tLayout(): Int {
-        return R.layout.item_havoline4t_routes_layout
+        return R.layout.item_havoline4t_stops_layout
     }
 
     fun getItemTexacoLayout(): Int {

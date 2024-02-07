@@ -1,5 +1,6 @@
 package com.trend.feature_content.ui.information
 
+import android.content.Intent
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.MediaPlayer
@@ -10,26 +11,30 @@ import android.view.View
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.trend.chevron.databinding.ActivityMainShowContentBinding
 import com.trend.feature_common.extensiones.ProgressUtil
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
-import com.trend.feature_common.extensiones.setBackgroundDelo
-import com.trend.feature_common.extensiones.setBackgroundHavoline
-import com.trend.feature_common.extensiones.setBackgroundHavoline4t
-import com.trend.feature_common.extensiones.setBackgroundRedTexture
-import com.trend.feature_common.extensiones.setBackgroundTexaco
-import com.trend.feature_common.extensiones.setCharacterDelo
-import com.trend.feature_common.extensiones.setCharacterHavoline4T
-import com.trend.feature_common.extensiones.setCharacterTexaco
-import com.trend.feature_common.extensiones.setDeloButton
-import com.trend.feature_common.extensiones.setHavoline4TButton
+import com.trend.feature_common.models.StatusLessonsRequest
+import com.trend.feature_common.network.BaseEvent
+import com.trend.feature_content.ui.home.ApplyUIMainContent
+import com.trend.feature_content.ui.home.ApplyUIMainContentImpl
+import com.trend.feature_tests.ui.MainExamenActivity
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import java.io.IOException
 
-class MainShowContentActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class MainShowContentActivity : AppCompatActivity(), ApplyUIMainContent by ApplyUIMainContentImpl() {
     private lateinit var binding: ActivityMainShowContentBinding
+
+    private val viewModel: MainShowContentViewModel by viewModels()
 
     private var BODY1: String = ""
     private var BODY2: String = ""
@@ -53,8 +58,33 @@ class MainShowContentActivity : AppCompatActivity() {
         getExtras()
         initialSetup()
         setupWebView()
-        setBackground()
         setupListeners()
+        setupObservers()
+    }
+
+    private fun setupObservers() {
+
+        lifecycleScope.launch {
+            viewModel.update.collect {
+                when(it) {
+                    is BaseEvent.Init -> {}
+                    is BaseEvent.Loading -> ProgressUtil.showLoading(this@MainShowContentActivity)
+                    is BaseEvent.Success -> {
+                        ProgressUtil.hideLoading()
+                        when(VALOR){
+                            1 -> finish()
+                            2 -> finish()
+                            3 -> {
+                                startAnotherActivity()
+                            }
+                            else -> finish()
+                        }
+
+                    }
+                    is BaseEvent.Error -> ProgressUtil.hideLoading()
+                }
+            }
+        }
     }
 
     private fun setupListeners() {
@@ -66,6 +96,21 @@ class MainShowContentActivity : AppCompatActivity() {
                 ProgressUtil.hideLoading()
             }
         }
+        binding.endButton.setOnClickListener {
+            binding.endButton.isEnabled = false
+            binding.endButton.isFocusable = false
+            ProgressUtil.showLoading(this@MainShowContentActivity)
+            viewModel.updateStatusLesson(StatusLessonsRequest(IDUSER, IDSTOP, VALOR))
+        }
+    }
+
+    private fun startAnotherActivity() {
+        startActivity(Intent(this, FinishLessonActivity::class.java).apply {
+            putExtra(constants.TYPE_ACCOUNT, TYPE_ACCOUNT)
+            putExtra(constants.IDROUTE, IDROUTE)
+            putExtra(constants.PARADA, PARADA)
+        })
+        finish()
     }
 
     private fun getExtras() {
@@ -96,60 +141,20 @@ class MainShowContentActivity : AppCompatActivity() {
         binding.paradaName.text = PARADA
     }
 
-    private fun setBackground() {
-        when (TYPE_ACCOUNT) {
-            TypeAccount.TEXACO -> binding.imgBackgroun.setBackgroundRedTexture()
-            TypeAccount.DELO -> binding.imgBackgroun.visibility = View.GONE
-            TypeAccount.HAVOLINE4T -> binding.imgBackgroun.setBackgroundRedTexture()
-            else -> binding.imgBackgroun.setBackgroundHavoline()
-        }
-    }
-
     private fun initialSetup() {
-        when(TYPE_ACCOUNT) {
-            TypeAccount.TEXACO -> {
-                binding.imageCharacter.setCharacterTexaco()
-                binding.imgBackgroun.setBackgroundRedTexture()
-                binding.toolbarInfo.setBackgroundTexaco()
-            }
-            TypeAccount.DELO -> {
-                binding.imageCharacter.setCharacterDelo()
-                binding.displayMainContainer.setBackgroundDelo()
-                binding.imgBackgroun.visibility = View.GONE
-                binding.toolbarInfo.setBackgroundDelo()
-                binding.endButton.setDeloButton()
-            }
-            TypeAccount.HAVOLINE4T -> {
-                binding.imageCharacter.setCharacterHavoline4T()
-                binding.imgBackgroun.setBackgroundHavoline4t()
-                binding.toolbarInfo.setBackgroundTexaco()
-                binding.endButton.setHavoline4TButton()
-            }
-            else -> {}
-        }
+
+        applyUIDisplayContent(
+            context = this@MainShowContentActivity,
+            typeAccount = TYPE_ACCOUNT,
+            binding = binding
+        )
 
         when(VALOR) {
-            1 -> {
-                ProgressUtil.showLoading(this@MainShowContentActivity)
-                binding.webLayout.visibility = View.VISIBLE
-                if(STATUSLESSON == 1) binding.endButton.visibility = View.GONE
-                BODY1.let {
-                    binding.webLayout.loadDataWithBaseURL(null, it, "text/html", "utf-8", null)
-                }
-            }
-            2 -> {
-                ProgressUtil.showLoading(this@MainShowContentActivity)
-                binding.webLayout.visibility = View.VISIBLE
-                if(STATUSLESSON == 1) binding.endButton.visibility = View.GONE
-                BODY2.let {
-                    binding.webLayout.loadDataWithBaseURL(null, it, "text/html", "utf-8", null)
-                }
-            }
+            1 -> showOption1And2(BODY1)
+            2 -> showOption1And2(BODY2)
             3 -> {
-                setBackground()
                 ProgressUtil.hideLoading()
                 if(STATUSLESSON == 1) binding.endButton.visibility = View.GONE
-
                 Glide.with(this).load(PATH_IMAGE).into(binding.imageCharacter)
 
                 binding.btnPlayAudio.visibility = View.VISIBLE
@@ -181,7 +186,7 @@ class MainShowContentActivity : AppCompatActivity() {
                         try {
                             mediaPlayer.start()
                         } catch (ex: Exception) {
-
+                            Snackbar.make(this@MainShowContentActivity, binding.displayMainContainer, ex.message.toString(), Snackbar.LENGTH_LONG).show()
                         }
                     }
                 } ?: run {
@@ -202,6 +207,13 @@ class MainShowContentActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun showOption1And2(body: String) {
+        ProgressUtil.showLoading(this@MainShowContentActivity)
+        binding.webLayout.visibility = View.VISIBLE
+        if(STATUSLESSON == 1) binding.endButton.visibility = View.GONE
+        binding.webLayout.loadDataWithBaseURL(null, body, "text/html", "utf-8", null)
     }
 
     override fun onPause() {

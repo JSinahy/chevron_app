@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -37,7 +40,13 @@ dependencies {
     implementation(Dependencies.androidCore)
     implementation(Dependencies.androidAppCompat)
     implementation(Dependencies.androidMaterial)
+    implementation(Dependencies.androidConstraitLayout)
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation(Dependencies.androidJUnit)
     androidTestImplementation(Dependencies.androidExtUnit)
     androidTestImplementation(Dependencies.androidEspresso)
+
+    implementation(project(Modules.moduleCommon))
 }

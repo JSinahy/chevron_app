@@ -62,7 +62,7 @@ interface ApiServices {
     suspend fun getServiceStations(@Body request: SSRequest): SSResponse
 
     @PATCH("lessons/")
-    fun updateStatusLessons(@Body request: StatusLessonsRequest): Call<StatusLessonsResponse>
+    suspend fun updateStatusLessons(@Body request: StatusLessonsRequest): StatusLessonsResponse
 
     @POST("lessons/test")
     fun getTest(@Body request: TestRequest): Call<TestResponse>

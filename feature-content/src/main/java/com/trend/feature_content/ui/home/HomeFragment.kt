@@ -32,7 +32,9 @@ import com.trend.feature_common.utils.PreferencesHelper.isLogged
 import com.trend.feature_common.utils.PreferencesHelper.nameUser
 import com.trend.feature_common.utils.PreferencesHelper.timeToStudy
 import com.trend.feature_common.utils.PreferencesHelper.typeAccount
+import com.trend.feature_content.ui.information.FinishLessonActivity
 import com.trend.feature_content.ui.information.MainShowContentActivity
+import com.trend.feature_tests.ui.MainExamenActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -86,7 +88,6 @@ class HomeFragment : Fragment(), ApplyUIMainContent by ApplyUIMainContentImpl() 
                 }
             }
         }
-        viewModel.getMainContent(MainContentRequest(1, 1))
     }
 
     private fun setupAdapter(content: MainContentResponse) {
@@ -125,7 +126,7 @@ class HomeFragment : Fragment(), ApplyUIMainContent by ApplyUIMainContentImpl() 
         }, typeAccount,
             OnClickOpenRouteTest { IdRoute, IdTest, IdStop ->
                 if(IdTest > 0) {
-                    val mIntent = Intent(activity, MainShowContentActivity::class.java).apply {
+                    val mIntent = Intent(activity, MainExamenActivity::class.java).apply {
                         putExtra(constants.IDROUTE, IdRoute)
                         putExtra(constants.IDSTOP, IdStop)
                         putExtra(constants.IDTEST, IdTest)
@@ -223,4 +224,9 @@ class HomeFragment : Fragment(), ApplyUIMainContent by ApplyUIMainContentImpl() 
         fun onClick(IdRoute: Int, IdTest: Int, IdStop: Int) = openTest(IdRoute, IdTest, IdStop)
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.getMainContent(MainContentRequest(prefs.idUser, prefs.idEnterprise))
+    }
 }
+

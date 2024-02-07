@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/generalLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:background="@android:color/black"
+        android:id="@+id/rv_header"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/text_route"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toRightOf="@+id/img_back"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Ruta 1"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/parada_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Parada 1"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_backgroun"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rv_header"
+        android:scaleType="centerCrop"
+        android:src="@drawable/havoline_texture_background" />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:textColor="@color/black"
+        android:id="@+id/returnButton"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_height="52dp"
+        android:background="@drawable/generic_yellow_button_rounded_corners"
+        android:paddingStart="56dp"
+        android:paddingEnd="56dp"
+        android:text="Continuar"
+        android:drawableEnd="@drawable/ic_btn_play"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:visibility="gone"
+        android:id="@+id/returnButtonTx"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_height="52dp"
+        android:background="@drawable/generic_btn_white_red_borders"
+        android:paddingStart="76dp"
+        android:paddingEnd="76dp"
+        android:text="Continuar"
+        android:drawableEnd="@drawable/ic_btn_play_texaco"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/rv_header"
+        android:id="@+id/constraint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_globe"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/generic_img_globe_finish_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_marginTop="16dp"
+            android:id="@+id/img_hand"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:src="@drawable/ic_thumb_up_yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_globe" />
+
+        <TextView
+            android:fontFamily="@font/gotham_bold"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:textColor="#FFD200"
+            android:id="@+id/text_congrats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Felicidades!"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_hand" />
+
+        <TextView
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:fontFamily="@font/gotham_bold"
+            android:textColor="#FFFFFF"
+            android:id="@+id/text_completed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completaste\nuna parada"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_congrats" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:id="@+id/img_character"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/constraint"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="56dp"
+        android:src="@drawable/havoline_img_character" />
+
+</RelativeLayout>

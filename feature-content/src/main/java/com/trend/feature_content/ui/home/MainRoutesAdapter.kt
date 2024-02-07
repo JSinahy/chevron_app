@@ -73,8 +73,7 @@ class MainRoutesAdapter(val context: Context,
             }
         }
 
-        val adapter = MainStopsAdapter(context,
-            HomeFragment.OnClickListener { parada, valor, idStop, statusLesson, IdRoad ->
+        val adapter = MainStopsAdapter(HomeFragment.OnClickListener { parada, valor, idStop, statusLesson, IdRoad ->
                 click.onClick(parada, valor, idStop, statusLesson, IdRoad)
             }, type,
             HomeFragment.OnClickOpenRouteTest { IdRoute, IdTest, IdStop ->

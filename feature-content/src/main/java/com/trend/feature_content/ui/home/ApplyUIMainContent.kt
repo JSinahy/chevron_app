@@ -5,14 +5,21 @@ import android.graphics.Color
 import android.view.View
 import androidx.appcompat.content.res.AppCompatResources
 import com.trend.chevron.R
+import com.trend.chevron.databinding.ActivityFinishLessonBinding
+import com.trend.chevron.databinding.ActivityMainShowContentBinding
 import com.trend.chevron.databinding.FragmentHomeBinding
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.TypeImage
+import com.trend.feature_common.extensiones.setBackgroundBlue
+import com.trend.feature_common.extensiones.setBackgroundDarkRed
 import com.trend.feature_common.extensiones.setBackgroundDelo
 import com.trend.feature_common.extensiones.setBackgroundHavoline
 import com.trend.feature_common.extensiones.setBackgroundHavoline4t
+import com.trend.feature_common.extensiones.setBackgroundRed
+import com.trend.feature_common.extensiones.setBackgroundRedTexture
 import com.trend.feature_common.extensiones.setBackgroundTexaco
 import com.trend.feature_common.extensiones.setBlackColor
+import com.trend.feature_common.extensiones.setBlueHand
 import com.trend.feature_common.extensiones.setBubbleDelo
 import com.trend.feature_common.extensiones.setBubbleHavoline
 import com.trend.feature_common.extensiones.setBubbleHavoline4T
@@ -21,21 +28,30 @@ import com.trend.feature_common.extensiones.setCharacterDelo
 import com.trend.feature_common.extensiones.setCharacterHavoline
 import com.trend.feature_common.extensiones.setCharacterHavoline4T
 import com.trend.feature_common.extensiones.setCharacterTexaco
+import com.trend.feature_common.extensiones.setDeloButton
+import com.trend.feature_common.extensiones.setDeloContinueButtonBackground
 import com.trend.feature_common.extensiones.setDeloLogo
+import com.trend.feature_common.extensiones.setGlobeDelo
+import com.trend.feature_common.extensiones.setGlobeHavoline4T
+import com.trend.feature_common.extensiones.setGlobeTexaco
 import com.trend.feature_common.extensiones.setGoinOnButtonDelo
 import com.trend.feature_common.extensiones.setGoinOnButtonHavoline
 import com.trend.feature_common.extensiones.setGoinOnButtonTexaco
+import com.trend.feature_common.extensiones.setHavoline4TButton
 import com.trend.feature_common.extensiones.setHavoline4tLogo
 import com.trend.feature_common.extensiones.setHavolineLogo
 import com.trend.feature_common.extensiones.setHeaderAndFooter
+import com.trend.feature_common.extensiones.setRedHand
 import com.trend.feature_common.extensiones.setStopBackgroundDelo
 import com.trend.feature_common.extensiones.setStopBackgroundHavoline
 import com.trend.feature_common.extensiones.setStopBackgroundHavoline4T
 import com.trend.feature_common.extensiones.setStopBackgroundTexaco
 import com.trend.feature_common.extensiones.setTexacoLogo
+import com.trend.feature_common.extensiones.setTexacoWhiteButtonBackground
 import com.trend.feature_common.extensiones.setTruckImage
 import com.trend.feature_common.extensiones.setWhiteColor
 import com.trend.feature_common.extensiones.setYellowColor
+import com.trend.feature_common.extensiones.setYellowHand
 import com.trend.feature_common.models.MainContentModel
 import com.trend.feature_common.models.ParadasModel
 import com.trend.feature_common.utils.DrawableUtils
@@ -66,6 +82,17 @@ interface ApplyUIMainContent {
         typeAccount: TypeAccount,
         mainStopModel: ParadasModel,
         viewHolder: MainStopsAdapter.ViewHolder
+    )
+
+    fun applyUIDisplayContent(
+        context: Context,
+        typeAccount: TypeAccount,
+        binding: ActivityMainShowContentBinding
+    )
+
+    fun applyUIFinishLessonContent(
+        typeAccount: TypeAccount,
+        binding: ActivityFinishLessonBinding
     )
 }
 
@@ -321,6 +348,75 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                     viewHolder.statusLesson3.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getCheckHavoline()))
                 }
             }
+        }
+    }
+
+    override fun applyUIDisplayContent(
+        context: Context,
+        typeAccount: TypeAccount,
+        binding: ActivityMainShowContentBinding
+    ) {
+        when(typeAccount) {
+            TypeAccount.TEXACO -> {
+                binding.imageCharacter.setCharacterTexaco()
+                binding.imgBackgroun.setBackgroundRedTexture()
+                binding.toolbarInfo.setBackgroundRed()
+            }
+            TypeAccount.DELO -> {
+                binding.imageCharacter.setCharacterDelo()
+                binding.displayMainContainer.setBackgroundDelo()
+                binding.imgBackgroun.visibility = View.GONE
+                binding.toolbarInfo.setBackgroundBlue()
+                binding.endButton.setDeloButton()
+            }
+            TypeAccount.HAVOLINE4T -> {
+                binding.imageCharacter.setCharacterHavoline4T()
+                binding.imgBackgroun.setBackgroundRedTexture()
+                binding.toolbarInfo.setBackgroundDarkRed()
+                binding.endButton.setHavoline4TButton()
+            }
+            else -> {}
+        }
+    }
+
+    override fun applyUIFinishLessonContent(
+        typeAccount: TypeAccount,
+        binding: ActivityFinishLessonBinding
+    ) {
+        when (typeAccount) {
+            TypeAccount.TEXACO -> {
+                binding.imgBackgroun.setBackgroundRedTexture()
+                binding.imgCharacter.setCharacterTexaco()
+                binding.imgGlobe.setGlobeTexaco()
+                binding.imgHand.setRedHand()
+                binding.textCongrats.setTextColor(Color.parseColor("#000000"))
+                binding.textCompleted.setTextColor(Color.parseColor("#000000"))
+                binding.returnButton.setTexacoWhiteButtonBackground()
+                binding.returnButton.setCompoundDrawablesWithIntrinsicBounds(null, null, AppCompatResources.getDrawable(binding.root.context, DrawableUtils.getBtnPlayTexaco()), null)
+                binding.rvHeader.background = AppCompatResources.getDrawable(binding.root.context, DrawableUtils.getBackgroundRed())
+            }
+            TypeAccount.HAVOLINE4T -> {
+                binding.imgBackgroun.setBackgroundHavoline4t()
+                binding.imgCharacter.setCharacterHavoline4T()
+                binding.imgGlobe.setGlobeHavoline4T()
+                binding.imgHand.setYellowHand()
+                binding.textCompleted.setTextColor(Color.parseColor("#FFFFFF"))
+                binding.returnButton.setCompoundDrawablesWithIntrinsicBounds(null, null, AppCompatResources.getDrawable(binding.root.context, DrawableUtils.getBtnPlay()), null)
+                binding.rvHeader.background = AppCompatResources.getDrawable(binding.root.context, DrawableUtils.getBackgroundDarkRed())
+            }
+            TypeAccount.DELO -> {
+                binding.imgBackgroun.visibility = View.GONE
+                binding.generalLayout.setBackgroundDelo()
+                binding.imgCharacter.setCharacterDelo()
+                binding.imgGlobe.setGlobeDelo()
+                binding.imgHand.setBlueHand()
+                binding.textCongrats.setTextColor(Color.parseColor("#FFFFFF"))
+                binding.textCompleted.setTextColor(Color.parseColor("#FFFFFF"))
+                binding.returnButton.setDeloContinueButtonBackground()
+                binding.returnButton.setCompoundDrawablesWithIntrinsicBounds(null, null, AppCompatResources.getDrawable(binding.root.context, DrawableUtils.getBtnPlayDelo()), null)
+                binding.rvHeader.background = AppCompatResources.getDrawable(binding.root.context, DrawableUtils.getBackgroundBlue())
+            }
+            TypeAccount.HAVOLINE -> {}
         }
     }
 

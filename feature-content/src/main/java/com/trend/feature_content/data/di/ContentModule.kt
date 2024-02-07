@@ -1,13 +1,14 @@
 package com.trend.feature_content.data.di
 
 import com.trend.feature_common.network.ApiServices
-import com.trend.feature_common.network.RetrofitHelper
 import com.trend.feature_content.data.ds.ContentRemoteDataSource
 import com.trend.feature_content.data.ds.ContentRemoteDataSourceImpl
 import com.trend.feature_content.data.repositories.ContentRepository
 import com.trend.feature_content.data.repositories.ContentRepositoryImpl
 import com.trend.feature_content.domain.usecases.ContentUseCase
 import com.trend.feature_content.domain.usecases.ContentUseCaseImpl
+import com.trend.feature_content.domain.usecases.UpdateLessonUseCase
+import com.trend.feature_content.domain.usecases.UpdateLessonUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,4 +34,9 @@ object ContentModule {
     @Provides
     fun providesContentUseCase(contentRepository: ContentRepository): ContentUseCase =
         ContentUseCaseImpl(contentRepository)
+
+    @Singleton
+    @Provides
+    fun providesUpdateLessonUseCase(contentRepository: ContentRepository): UpdateLessonUseCase =
+        UpdateLessonUseCaseImpl(contentRepository)
 }

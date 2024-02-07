@@ -284,8 +284,6 @@
                     android:spinnerMode="dialog" />
             </RelativeLayout>
 
-
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSave"
                 android:layout_width="match_parent"

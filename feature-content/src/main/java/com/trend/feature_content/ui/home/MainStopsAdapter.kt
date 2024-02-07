@@ -18,8 +18,7 @@ import com.trend.feature_common.models.ParadasModel
 import com.trend.feature_common.utils.DrawableUtils
 import com.trend.feature_common.utils.LayoutUtils
 
-class MainStopsAdapter(val ctx: Context,
-                       val click: HomeFragment.OnClickListener,
+class MainStopsAdapter(val click: HomeFragment.OnClickListener,
                        var type: TypeAccount,
                        val clickRoute: HomeFragment.OnClickOpenRouteTest,
                        val roadMap: Int

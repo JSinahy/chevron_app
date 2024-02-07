@@ -39,5 +39,17 @@ object DrawableUtils {
     fun getLockImage() = R.id.lock_image
     fun getProgress() = R.id.progress
     fun getLock() = R.drawable.ic_lock
+    fun getBtnPlayTexaco() = R.drawable.ic_btn_play_texaco
+    fun getBtnPlayDelo() = R.drawable.ic_btn_play_delo
+    fun getBtnPlay() = R.drawable.ic_btn_play
+    fun getHavoline4TBackground() = R.drawable.havoline4t_texture_background
+    fun getDeloBackground() = R.drawable.delo_gradient_background
 
+    fun getBackgroundDarkRed() = R.drawable.generic_background_dark_red
+    fun getBackgroundBlue() = R.drawable.generic_background_blue
+    fun getBackgroundRed() = R.drawable.generic_background_red
+    fun getBlackFinishGlobe() = R.drawable.generic_img_globe_finish_black
+    fun getBlueFinishGlobe() = R.drawable.generic_img_globe_finish_blue
+    fun getWhiteFinishGlobe() = R.drawable.generic_img_globe_finish_white
+    fun getDarkRedFinishGlobe() = R.drawable.generic_img_globe_finish_dark_red
 }
