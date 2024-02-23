@@ -48,4 +48,8 @@ object Dependencies {
 
     // Glide
     val androidGlide by lazy { "com.github.bumptech.glide:glide:${Versions.androidGlide}" }
+
+    // Facebook
+    val androidFacebookSDK by lazy { "com.facebook.android:facebook-android-sdk:latest.release" }
+    val androidFacebookShareSDK by lazy { "com.facebook.android:facebook-share:latest.release" }
 }

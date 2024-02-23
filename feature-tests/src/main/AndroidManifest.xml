@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <queries>
+        <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+    </queries>
     <application>
+        <activity
+            android:name="com.trend.feature_tests.ui.ShareExamenResultActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.trend.feature_tests.ui.ExamenResultActivity"
+            android:exported="false" />
         <activity
             android:name="com.trend.feature_tests.ui.ExamenActivity"
             android:exported="false" />
         <activity
             android:name="com.trend.feature_tests.ui.MainExamenActivity"
             android:exported="false" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+
+        <provider android:authorities="com.facebook.app.FacebookContentProvider278187381944610"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true"/>
     </application>
 
 </manifest>

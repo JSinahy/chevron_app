@@ -20,6 +20,7 @@ object DrawableUtils {
     fun getShieldBlue5() = R.drawable.ic_shield_blue_5
     fun getDisabledPlay() = R.drawable.ic_disabled_play
     fun getCheckHavoline() = R.drawable.ic_okcheck
+    fun getIncorrect() = R.drawable.ic_incorrect
     fun getCheckDelo() = R.drawable.ic_delo_okcheck
     fun getTitleStop() = R.id.title_stop
     fun getSubtitleStop() = R.id.subtitle_stop
@@ -52,4 +53,33 @@ object DrawableUtils {
     fun getBlueFinishGlobe() = R.drawable.generic_img_globe_finish_blue
     fun getWhiteFinishGlobe() = R.drawable.generic_img_globe_finish_white
     fun getDarkRedFinishGlobe() = R.drawable.generic_img_globe_finish_dark_red
+
+    fun getHavolineRadioButtonNormal() = R.drawable.havoline_radio_button_normal
+    fun getHavolineRadioButtonSelected() = R.drawable.havoline_radio_button_selected
+
+    fun getDeloRadioButtonNormal() = R.drawable.delo_radio_button_normal
+    fun getDeloRadioButtonSelected() = R.drawable.delo_radio_button_selected
+
+    fun getHavoline4tRadioButtonNormal() = R.drawable.havoline4t_radio_button_normal
+    fun getHavoline4tRadioButtonSelected() = R.drawable.havoline4t_radio_button_selected
+
+    fun getTexacoRadioButtonNormal() = R.drawable.texaco_radio_button_normal
+    fun getTexacoRadioButtonSelected() = R.drawable.texaco_radio_button_selected
+
+    fun getGenericRedButton() = R.drawable.generic_red_button
+    fun getGenericDarkRedButton() = R.drawable.generic_dark_red_button_rounded_corners
+    fun getGenericDeloButton() = R.drawable.generic_blue_light_button_rounded_corners
+
+    fun getButtonBlackWithYellowBorder() = R.drawable.generic_black_button_border_yellow
+    fun getButtonDarkRedWithYellowBorder() = R.drawable.generic_button_dark_red_border_yellow
+    fun getButtonBlue() = R.drawable.generic_blue_light_button_rounded_corners
+
+    fun getThumbUpYellow() = R.drawable.ic_thumb_up_yellow
+    fun getThumbUpBlue() = R.drawable.ic_thumb_up_blue
+    fun getThumbUpRed() = R.drawable.ic_thumb_up_red
+    fun getThumbUpWhite() = R.drawable.ic_thumb_up_white
+
+    fun getSadGray() = R.drawable.ic_sad_gray
+    fun getSadYellow() = R.drawable.ic_sad_yellow
+
 }

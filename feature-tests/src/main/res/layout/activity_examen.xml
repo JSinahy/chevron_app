@@ -1,9 +1,299 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.trend.feature_tests.ui.ExamenActivity">
+    android:background="@drawable/havoline_texture_background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        android:elevation="4dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_route"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ruta 1"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gotham_bold"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:textSize="18sp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gotham_bold"
+                android:layout_centerVertical="true"
+                android:textSize="18sp"
+                android:layout_alignParentEnd="true"
+                android:text="Prueba Experto"
+                android:layout_marginEnd="16dp"/>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/text_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/gotham_bold"
+        android:text="SELECCIONA LA RESPUESTA CORRECTA:"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_select"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/gotham_bold"
+        android:textSize="22sp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#FFD200" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/text_question"
+        android:layout_marginBottom="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/text_question"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/answer_a_container"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/havoline_radio_button_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:id="@+id/answer_a_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham_bold"
+                    android:text="A"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    />
+
+                <TextView
+                    android:layout_toEndOf="@+id/answer_a_indicator"
+                    android:layout_toStartOf="@+id/check_ok_a"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:id="@+id/answer_a_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/gotham_book"
+                    android:text="Esto es un ejemplo de como se llenaría el componente"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    />
+
+                <ImageView
+                    android:layout_marginEnd="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="invisible"
+                    android:id="@+id/check_ok_a"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:srcCompat="@drawable/ic_okcheck" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/answer_b_container"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/havoline_radio_button_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:id="@+id/answer_b_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/gotham_bold"
+                    android:text="B"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    />
+
+                <TextView
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_toStartOf="@+id/check_ok_b"
+                    android:layout_toEndOf="@+id/answer_b_indicator"
+                    android:layout_marginEnd="16dp"
+                    android:id="@+id/answer_b_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham_book"
+                    android:text="Esto es un ejemplo de como se llenaría el componente"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/answer_b_indicator"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_marginEnd="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="invisible"
+                    android:id="@+id/check_ok_b"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_okcheck" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/answer_c_container"
+                android:layout_marginTop="16dp"
+
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/havoline_radio_button_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginStart="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:id="@+id/answer_c_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham_bold"
+                    android:text="C"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_toEndOf="@+id/answer_c_indicator"
+                    android:layout_toStartOf="@+id/check_ok_c"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:id="@+id/answer_c_text"
+                    android:layout_width="311dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham_book"
+                    android:text="Esto es un ejemplo de como se llenaría el componente"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_marginEnd="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="invisible"
+                    android:id="@+id/check_ok_c"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/answer_d_container"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/havoline_radio_button_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:id="@+id/answer_d_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham_bold"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:text="D"
+                    />
+
+                <TextView
+                    android:layout_toEndOf="@+id/answer_d_indicator"
+                    android:layout_toStartOf="@+id/check_ok_d"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:id="@+id/answer_d_text"
+                    android:layout_width="311dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham_book"
+                    android:text="Esto es un ejemplo de como se llenaría el componente"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_marginEnd="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="invisible"
+                    android:id="@+id/check_ok_d"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btn_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/generic_black_button_border_yellow"
+        android:text="COMPROBAR"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

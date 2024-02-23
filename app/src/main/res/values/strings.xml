@@ -5,4 +5,8 @@
     <string name="mode">Mode:</string>
     <string name="txt_sign_up">REGISTRARSE</string>
     <string name="txt_chevron_slogan">Lo que necesitas para ser\nun experto en el camino</string>
+
+    <string name="facebook_app_id">278187381944610</string>
+    <string name="facebook_client_token">1f6a5ce06d763ebd2a115eed539581bd</string>
+    <string name="facebook_application_id">278187381944610</string>
 </resources>

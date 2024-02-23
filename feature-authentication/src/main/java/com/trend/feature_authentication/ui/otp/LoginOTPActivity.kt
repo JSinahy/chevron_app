@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.trend.chevron.databinding.ActivityLoginOtpactivityBinding
+import com.trend.feature_common.extensiones.ProgressUtil
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
 import com.trend.feature_common.models.CheckOTPModel
@@ -51,9 +52,9 @@ class LoginOTPActivity : AppCompatActivity() {
             viewModel.validate.collect {
                 when(it) {
                     is BaseEvent.Init -> {}
-                    is BaseEvent.Loading -> binding.progressBar2.visibility = View.VISIBLE
+                    is BaseEvent.Loading -> ProgressUtil.showLoading(this@LoginOTPActivity)
                     is BaseEvent.Success -> {
-                        binding.progressBar2.visibility = View.GONE
+                        ProgressUtil.hideLoading()
                         prefs.isLogged = true
                         startActivity(Intent(this@LoginOTPActivity, MainContentActivity::class.java).apply {
                             putExtra(constants.TYPE_ACCOUNT, typeAccount)
@@ -66,7 +67,7 @@ class LoginOTPActivity : AppCompatActivity() {
                         finish()
                     }
                     is BaseEvent.Error -> {
-                        binding.progressBar2.visibility = View.GONE
+                        ProgressUtil.hideLoading()
                         Toast.makeText(this@LoginOTPActivity, "Ha ocurrido un error al momento de validar el OTP" + _OTP_, Toast.LENGTH_LONG).show()
                     }
                 }
@@ -77,11 +78,14 @@ class LoginOTPActivity : AppCompatActivity() {
             viewModel.generated.collect {
                 when(it) {
                     is BaseEvent.Init -> {}
-                    is BaseEvent.Loading -> binding.progressBar2.visibility = View.VISIBLE
+                    is BaseEvent.Loading -> ProgressUtil.showLoading(this@LoginOTPActivity)
                     is BaseEvent.Success -> {
+                        ProgressUtil.hideLoading()
                         _OTP_ = it.data.otp
                     }
-                    is BaseEvent.Error -> {}
+                    is BaseEvent.Error -> {
+                        ProgressUtil.hideLoading()
+                    }
                 }
             }
         }

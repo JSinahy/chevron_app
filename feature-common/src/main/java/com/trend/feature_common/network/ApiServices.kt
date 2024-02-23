@@ -65,5 +65,5 @@ interface ApiServices {
     suspend fun updateStatusLessons(@Body request: StatusLessonsRequest): StatusLessonsResponse
 
     @POST("lessons/test")
-    fun getTest(@Body request: TestRequest): Call<TestResponse>
+    suspend fun getTest(@Body request: TestRequest): TestResponse
 }

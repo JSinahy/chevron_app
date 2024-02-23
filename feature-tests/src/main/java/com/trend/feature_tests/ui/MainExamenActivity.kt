@@ -27,7 +27,7 @@ class MainExamenActivity : AppCompatActivity(), ApplyUITestContent by ApplyUITes
     }
 
     private fun setupUI() {
-        applyMainContent(
+        applyMainTestContent(
             typeAccount,
             binding
         )
@@ -54,6 +54,7 @@ class MainExamenActivity : AppCompatActivity(), ApplyUITestContent by ApplyUITes
                     putExtra(constants.IDSTOP, IdStop)
                     putExtra(constants.IDTEST, IdTest)
                     putExtra(constants.TYPE_ACCOUNT, typeAccount)
+                    putExtra(constants.ISLASTONE, IdRoute == 6)
                 }
             startActivity(mIntent)
             finish()

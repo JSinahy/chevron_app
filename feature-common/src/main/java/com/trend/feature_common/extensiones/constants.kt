@@ -25,5 +25,6 @@ class constants {
         val COUNTRY_CODE = "COUNTRY_CODE"
         val IDROUTE = "IDROUTE"
         val IDTEST = "IDTEST"
+        val ISLASTONE = "ISLASTONE"
     }
 }

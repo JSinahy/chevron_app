@@ -13,6 +13,7 @@ import com.trend.feature_common.delegates.ApplyLoadLocalDropdown
 import com.trend.feature_common.delegates.ApplyLoadLocalDropdownImpl
 import com.trend.feature_common.delegates.ApplySharedPreferences
 import com.trend.feature_common.delegates.ApplySharedPreferencesImpl
+import com.trend.feature_common.extensiones.ProgressUtil
 import com.trend.feature_common.extensiones.constants
 import com.trend.feature_common.models.CountriesCellphoneDataModel
 import com.trend.feature_common.models.LoginModel
@@ -51,14 +52,15 @@ class LoginCellphoneActivity : AppCompatActivity(),
             viewModel.login.collect {
                 when(it) {
                     is BaseEvent.Init -> {}
-                    is BaseEvent.Loading -> binding.progressBar3.visibility = View.VISIBLE
+                    is BaseEvent.Loading -> ProgressUtil.showLoading(this@LoginCellphoneActivity)
                     is BaseEvent.Success -> {
+                        ProgressUtil.hideLoading()
                         applyUpdateSharedPreferences(this@LoginCellphoneActivity, constants.CUSTOM_PREF_NAME, it.data.data)
                         startOTPActivity(it.data)
                     }
                     is BaseEvent.Error -> {
                         Snackbar.make(binding.root, it.message, Snackbar.LENGTH_LONG).show()
-                        binding.progressBar3.visibility = View.GONE
+                        ProgressUtil.hideLoading()
                     }
                 }
             }

@@ -212,7 +212,7 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                         holder.imgLock.visibility = View.VISIBLE
                         holder.progressBar.visibility = View.GONE
                         holder.imgRoute.visibility = View.GONE
-                        holder.textRoute.setTextColor(Color.parseColor("#808080"))
+                        holder.textRoute.setTextColor(Color.parseColor("#FFFFFF"))
                         holder.textRoute.setOnClickListener {
                             openTest.onClick(
                                 mainContentModel.ch_IdRoadmap,
@@ -235,7 +235,7 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                         holder.imgLock.visibility = View.VISIBLE
                         holder.progressBar.visibility = View.GONE
                         holder.imgRoute.visibility = View.GONE
-                        holder.textRoute.setTextColor(Color.parseColor("#808080"))
+                        holder.textRoute.setTextColor(Color.parseColor("#FFFFFF"))
                         holder.textRoute.setOnClickListener {
                             openTest.onClick(mainContentModel.ch_IdRoadmap, mainContentModel.ch_IdTest, mainContentModel.ch_Paradas[0].ch_IdStop)
                         }
@@ -254,7 +254,7 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                         holder.imgLock.visibility = View.VISIBLE
                         holder.progressBar.visibility = View.GONE
                         holder.imgRoute.visibility = View.GONE
-                        holder.textRoute.setTextColor(Color.parseColor("#808080"))
+                        holder.textRoute.setTextColor(Color.parseColor("#FFFFFF"))
                         holder.textRoute.setOnClickListener {
                             openTest.onClick(mainContentModel.ch_IdRoadmap, mainContentModel.ch_IdTest, mainContentModel.ch_Paradas[0].ch_IdStop)
                         }
@@ -273,7 +273,7 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                         holder.imgLock.visibility = View.VISIBLE
                         holder.progressBar.visibility = View.GONE
                         holder.imgRoute.visibility = View.GONE
-                        holder.textRoute.setTextColor(Color.parseColor("#808080"))
+                        holder.textRoute.setTextColor(Color.parseColor("#FFFFFF"))
                         holder.textRoute.setOnClickListener {
                             openTest.onClick(mainContentModel.ch_IdRoadmap, mainContentModel.ch_Paradas[0].ch_Type, mainContentModel.ch_Paradas[0].ch_IdStop)
                         }

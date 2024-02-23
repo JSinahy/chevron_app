@@ -120,3 +120,15 @@ data class MonthsModel(var id: String, var name: String)
 data class StudyTimeModel(var Id: Int, var Name: String)
 
 data class StopContinueModel(var ruta: String, var parada: String)
+
+class CorrectAndIncorrectAnswers {
+    companion object {
+        var answers = CorrectIncorrect("", "", false)
+    }
+}
+
+data class CorrectIncorrect(
+    var selected: String,
+    var correct: String,
+    var result: Boolean
+)

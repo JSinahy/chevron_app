@@ -98,8 +98,8 @@ fun ImageView.setHeaderAndFooter(account: TypeAccount, type: TypeImage) {
         }
         TypeAccount.TEXACO -> {
             when(type) {
-                TypeImage.HEADER -> setImageDrawable(resources.getDrawable(R.drawable.texaco_img_footer, null))
-                TypeImage.FOOTER -> setImageDrawable(resources.getDrawable(R.drawable.texaco_img_header, null))
+                TypeImage.HEADER -> setImageDrawable(resources.getDrawable(R.drawable.texaco_img_header, null))
+                TypeImage.FOOTER -> setImageDrawable(resources.getDrawable(R.drawable.texaco_img_footer, null))
             }
         }
     }

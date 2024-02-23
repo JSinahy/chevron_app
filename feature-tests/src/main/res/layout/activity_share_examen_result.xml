@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/havoline_texture_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/transparent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HAZ COMPLETADO TU CAMINO"
+                android:textColor="@color/yellow"
+                android:fontFamily="@font/gotham_bold"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:textColor="@color/white"
+        android:id="@+id/text_certificate_title"
+        android:layout_below="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¡FELICIDADES YA ERES\nUN EXPERTO CHEVRON!"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:fontFamily="@font/gotham_bold"
+        android:textSize="@dimen/_23ssp"/>
+
+    <ImageView
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_below="@+id/text_certificate_title"
+        android:id="@+id/img_certificate"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:paddingBottom="@dimen/_8sdp"
+        android:layout_below="@+id/img_certificate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/share_with_facebook"
+            android:fontFamily="@font/gotham_bold"
+            android:gravity="center"
+            android:text="Compartir en Facebook"
+            android:textColor="@color/black"
+            android:background="@drawable/generic_yellow_button_square_rounded_corners"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="80dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/save_certificate"
+            android:fontFamily="@font/gotham_bold"
+            android:gravity="center"
+            android:text="Guardar"
+            android:textColor="@color/black"
+            android:background="@drawable/generic_yellow_button_square_rounded_corners"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="80dp"/>
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/keep_learning"
+        android:fontFamily="@font/gotham_bold"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp"
+        android:text="Seguir Aprendiendo"
+        android:textColor="@color/black"
+        android:background="@drawable/generic_yellow_button_rounded_corners"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
