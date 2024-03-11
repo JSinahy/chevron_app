@@ -1,10 +1,13 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
-    namespace = General.nameSpace
+    namespace = "com.trend.feature_trends"
     compileSdk = General.compileSDK.toInt()
 
     defaultConfig {
@@ -46,5 +49,22 @@ dependencies {
     androidTestImplementation(Dependencies.androidEspresso)
 
     implementation(project(Modules.moduleCommon))
-    implementation(project(Modules.moduleAccounts))
+    //implementation(project(Modules.moduleAccounts))
+
+    // Lifecycle
+    implementation(Dependencies.androidLifeCycleLivedata)
+    implementation(Dependencies.androidLifeCycleViewModel)
+    implementation(Dependencies.androidLifeCycle_Activity)
+
+    // Retrofit
+    implementation(Dependencies.androidRetrofit)
+    implementation(Dependencies.androidGson)
+    implementation(Dependencies.androidInterceptor)
+    implementation(Dependencies.androidOkhttp)
+    implementation(Dependencies.androidCoroutinesKotlinx)
+    implementation(Dependencies.androidCoroutinesKotlinxCore)
+
+    // Hilt
+    implementation(Dependencies.androidHiltCore)
+    kapt(Dependencies.androidHiltCompiler)
 }

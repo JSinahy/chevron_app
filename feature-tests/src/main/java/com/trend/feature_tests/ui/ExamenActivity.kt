@@ -8,8 +8,8 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.lifecycleScope
-import com.trend.chevron.R
-import com.trend.chevron.databinding.ActivityExamenBinding
+
+
 import com.trend.feature_common.extensiones.ProgressUtil
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
@@ -18,6 +18,7 @@ import com.trend.feature_common.models.TestModel
 import com.trend.feature_common.models.TestRequest
 import com.trend.feature_common.network.BaseEvent
 import com.trend.feature_common.utils.DrawableUtils
+import com.trend.feature_test.databinding.ActivityExamenBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -31,13 +32,20 @@ class ExamenActivity : AppCompatActivity(),
     val viewModel: ExamenViewModel by viewModels()
 
     var typeAccount: TypeAccount = TypeAccount.HAVOLINE
+    //var questions = ArrayList<TestModel>()
+
     companion object {
+        var questions = ArrayList<TestModel>()
         var checked = false
         var corrects: Int = 0
+
+        fun getTypeAssesment(idRoute: Int): Int {
+            return if(idRoute < 6) (questions.size * 0.6).toInt() else (questions.size * 0.7).toInt()
+        }
     }
 
     var index: Int = 0
-    var questions = ArrayList<TestModel>()
+
 
     var IdRoute: Int = 0
     var IdStop: Int = 0
@@ -151,14 +159,7 @@ class ExamenActivity : AppCompatActivity(),
     }
 
     private fun startOtherActivity() {
-        IsLastOne.takeIf { !it }?.also {
-            startActivity(Intent(this@ExamenActivity, ExamenResultActivity::class.java).apply {
-                putExtra(constants.IDSTOP, IdStop)
-                putExtra(constants.IDTEST, IdTest)
-                putExtra(constants.TYPE_ACCOUNT, typeAccount)
-                putExtra(constants.CALIFICATION, corrects)
-            })
-        } ?: run {
+        IsLastOne.takeIf { it && corrects > getTypeAssesment(IdRoute) }?.also {
             startActivity(Intent(this@ExamenActivity, ShareExamenResultActivity::class.java).apply {
                 putExtra(constants.IDROUTE, IdRoute)
                 putExtra(constants.IDSTOP, IdStop)
@@ -166,9 +167,21 @@ class ExamenActivity : AppCompatActivity(),
                 putExtra(constants.TYPE_ACCOUNT, typeAccount)
                 putExtra(constants.CALIFICATION, corrects)
             })
+        } ?: run {
+            startActivity(Intent(this@ExamenActivity, ExamenResultActivity::class.java).apply {
+                putExtra(constants.IDROUTE, IdRoute)
+                putExtra(constants.IDSTOP, IdStop)
+                putExtra(constants.IDTEST, IdTest)
+                putExtra(constants.TYPE_ACCOUNT, typeAccount)
+                putExtra(constants.CALIFICATION, corrects)
+            })
         }
+
         finish()
     }
+
+
+
 
 
 }

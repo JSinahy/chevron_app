@@ -13,12 +13,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/feature-accounts" />
-            <option value="$PROJECT_DIR$/feature-authentication" />
             <option value="$PROJECT_DIR$/feature-common" />
             <option value="$PROJECT_DIR$/feature-content" />
-            <option value="$PROJECT_DIR$/feature-tests" />
-            <option value="$PROJECT_DIR$/feature-trends" />
+            <option value="$PROJECT_DIR$/feature-contracts" />
           </set>
         </option>
       </GradleProjectSettings>

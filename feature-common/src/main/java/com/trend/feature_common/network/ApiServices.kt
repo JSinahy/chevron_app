@@ -18,13 +18,16 @@ import com.trend.feature_common.models.StatusLessonsRequest
 import com.trend.feature_common.models.StatusLessonsResponse
 import com.trend.feature_common.models.TestRequest
 import com.trend.feature_common.models.TestResponse
+import com.trend.feature_common.models.TrendsCompletedResponse
 import com.trend.feature_common.models.UsersModel
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.PATCH
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiServices {
     @POST("users")
@@ -32,6 +35,9 @@ interface ApiServices {
 
     @PATCH("users")
     suspend fun updateUser(@Body user: UsersModel) : GenericResponse
+
+    @PATCH("users/completed/{id_employee}")
+    suspend fun updateCustomerEnterprise(@Path("id_employee") id_employee: Int) : TrendsCompletedResponse
 
     @DELETE("users")
     suspend fun deleteUser(@Body user: DeleteProfile) : GenericResponse

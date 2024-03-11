@@ -2,9 +2,9 @@ package com.trend.feature_content.ui.information
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.trend.chevron.databinding.ActivityFinishLessonBinding
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
+import com.trend.feature_content.databinding.ActivityFinishLessonBinding
 import com.trend.feature_content.ui.home.ApplyUIMainContent
 import com.trend.feature_content.ui.home.ApplyUIMainContentImpl
 

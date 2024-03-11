@@ -1,20 +1,22 @@
 package com.trend.chevron.ui.splash
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
+import androidx.appcompat.app.AppCompatActivity
 import com.trend.chevron.databinding.ActivityMainBinding
 import com.trend.feature_authentication.ui.cellphone.LoginCellphoneActivity
 import com.trend.feature_common.extensiones.constants
 import com.trend.feature_common.extensiones.openActivity
+import com.trend.feature_common.utils.Activities
 import com.trend.feature_common.utils.PreferencesHelper
 import com.trend.feature_common.utils.PreferencesHelper.isLogged
 import com.trend.feature_content.ui.MainContentActivity
-import com.trend.feature_trends.ui.SelectProfileActivity
+import com.trend.feature_content.ui.profiles.SelectProfileActivity
 
-class MainActivity : AppCompatActivity(), OnClickListener {
+
+class MainActivity : AppCompatActivity(), OnClickListener, Activities {
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +51,10 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 this.openActivity(SelectProfileActivity::class.java)
             }
         }
+    }
+
+    override fun open() {
+        startActivity(Intent(this@MainActivity, SelectProfileActivity::class.java))
     }
 
 

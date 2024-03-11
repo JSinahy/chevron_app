@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = General.nameSpace
+    namespace = "com.trend.feature_accounts"
     compileSdk = General.compileSDK.toInt()
 
     defaultConfig {

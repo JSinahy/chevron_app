@@ -3,11 +3,10 @@ package com.trend.feature_authentication.ui.cellphone
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
-import com.trend.chevron.databinding.ActivityLoginCellphoneBinding
+import com.trend.feature_authentication.databinding.ActivityLoginCellphoneBinding
 import com.trend.feature_authentication.ui.otp.LoginOTPActivity
 import com.trend.feature_common.delegates.ApplyLoadLocalDropdown
 import com.trend.feature_common.delegates.ApplyLoadLocalDropdownImpl

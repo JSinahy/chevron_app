@@ -26,5 +26,6 @@ class constants {
         val IDROUTE = "IDROUTE"
         val IDTEST = "IDTEST"
         val ISLASTONE = "ISLASTONE"
+        val FROM = "FROM"
     }
 }

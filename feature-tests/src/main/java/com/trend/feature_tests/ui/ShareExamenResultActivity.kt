@@ -1,5 +1,7 @@
 package com.trend.feature_tests.ui
 
+import android.content.ComponentName
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
@@ -21,21 +23,23 @@ import com.facebook.share.Sharer
 import com.facebook.share.model.SharePhoto
 import com.facebook.share.model.SharePhotoContent
 import com.facebook.share.widget.ShareDialog
-import com.trend.chevron.databinding.ActivityShareExamenResultBinding
 import com.trend.feature_common.extensiones.ProgressUtil
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
+import com.trend.feature_common.utils.Activities
 import com.trend.feature_common.utils.EnterprisesUtils
 import com.trend.feature_common.utils.PreferencesHelper
 import com.trend.feature_common.utils.PreferencesHelper.idEnterprise
 import com.trend.feature_common.utils.PreferencesHelper.idUser
+import com.trend.feature_test.databinding.ActivityShareExamenResultBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.File
 import java.net.URL
 
 
-class ShareExamenResultActivity : AppCompatActivity(), ApplyUITestContent by ApplyUITestContentImpl() {
+class ShareExamenResultActivity() : AppCompatActivity(),
+    ApplyUITestContent by ApplyUITestContentImpl() {
     lateinit var callbackManager: CallbackManager
     private lateinit var binding: ActivityShareExamenResultBinding
 
@@ -54,7 +58,7 @@ class ShareExamenResultActivity : AppCompatActivity(), ApplyUITestContent by App
         setContentView(binding.root)
         getExtras()
         initSetup()
-        setupImage()
+        //setupImage()
         //guardarImagenEnDescargas()
         setupListeners()
     }
@@ -116,9 +120,15 @@ class ShareExamenResultActivity : AppCompatActivity(), ApplyUITestContent by App
                 })
                 shareDialog.show(photoContent)
             }
+        }
 
-
-
+        binding.keepLearning.setOnClickListener {
+            val intent =  Intent(Intent.ACTION_MAIN)
+            intent.setComponent(ComponentName("com.trend.feature_trends","com.trend.feature_trends.ui.SelectProfileActivity")).apply {
+                putExtra(constants.FROM, 1)
+                putExtra(constants.TYPE_ACCOUNT, typeAccount)
+            }
+            startActivity(intent)
         }
     }
 

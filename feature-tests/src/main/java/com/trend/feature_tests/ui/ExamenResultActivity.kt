@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
-import com.trend.chevron.databinding.ActivityExamenResultBinding
 import com.trend.feature_common.extensiones.ProgressUtil
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
@@ -15,6 +14,7 @@ import com.trend.feature_common.network.BaseEvent
 import com.trend.feature_common.utils.PreferencesHelper
 import com.trend.feature_common.utils.PreferencesHelper.idUser
 import com.trend.feature_common.utils.PreferencesHelper.isLogged
+import com.trend.feature_test.databinding.ActivityExamenResultBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

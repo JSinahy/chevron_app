@@ -4,10 +4,6 @@ import android.content.Context
 import android.graphics.Color
 import android.view.View
 import androidx.appcompat.content.res.AppCompatResources
-import com.trend.chevron.R
-import com.trend.chevron.databinding.ActivityFinishLessonBinding
-import com.trend.chevron.databinding.ActivityMainShowContentBinding
-import com.trend.chevron.databinding.FragmentHomeBinding
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.TypeImage
 import com.trend.feature_common.extensiones.setBackgroundBlue
@@ -55,6 +51,9 @@ import com.trend.feature_common.extensiones.setYellowHand
 import com.trend.feature_common.models.MainContentModel
 import com.trend.feature_common.models.ParadasModel
 import com.trend.feature_common.utils.DrawableUtils
+import com.trend.feature_content.databinding.ActivityFinishLessonBinding
+import com.trend.feature_content.databinding.ActivityMainShowContentBinding
+import com.trend.feature_content.databinding.FragmentHomeBinding
 
 interface ApplyUIMainContent {
     fun applyMainContent(
@@ -74,14 +73,16 @@ interface ApplyUIMainContent {
         holder: MainRoutesAdapter.ViewHolder,
         typeAccount: TypeAccount,
         mainContentModel: MainContentModel,
-        openTest: HomeFragment.OnClickOpenRouteTest
+        openTest: HomeFragment.OnClickOpenRouteTest,
+        showLock: Boolean = false
     )
 
     fun applyUIStopsAdapter(
         context: Context,
         typeAccount: TypeAccount,
         mainStopModel: ParadasModel,
-        viewHolder: MainStopsAdapter.ViewHolder
+        viewHolder: MainStopsAdapter.ViewHolder,
+        showLock: Boolean = false
     )
 
     fun applyUIDisplayContent(
@@ -197,7 +198,8 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
         holder: MainRoutesAdapter.ViewHolder,
         typeAccount: TypeAccount,
         mainContentModel: MainContentModel,
-        openTest: HomeFragment.OnClickOpenRouteTest
+        openTest: HomeFragment.OnClickOpenRouteTest,
+        showLock: Boolean
     ) {
         when(typeAccount) {
             TypeAccount.HAVOLINE -> {
@@ -211,14 +213,19 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                         holder.textRoute.text = mainContentModel.ch_NameRoute.uppercase()
                         holder.imgLock.visibility = View.VISIBLE
                         holder.progressBar.visibility = View.GONE
+                        if(showLock) {
+                            holder.imgLock.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getLock()))
+                        }
                         holder.imgRoute.visibility = View.GONE
                         holder.textRoute.setTextColor(Color.parseColor("#FFFFFF"))
-                        holder.textRoute.setOnClickListener {
-                            openTest.onClick(
-                                mainContentModel.ch_IdRoadmap,
-                                mainContentModel.ch_Paradas[0].ch_Type,
-                                mainContentModel.ch_Paradas[0].ch_IdStop
-                            )
+                        if(!showLock) {
+                            holder.textRoute.setOnClickListener {
+                                openTest.onClick(
+                                    mainContentModel.ch_IdRoadmap,
+                                    mainContentModel.ch_Paradas[0].ch_Type,
+                                    mainContentModel.ch_Paradas[0].ch_IdStop
+                                )
+                            }
                         }
                     }
                 }
@@ -233,11 +240,16 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                     6 -> {
                         holder.textRoute.text = mainContentModel.ch_NameRoute.uppercase()
                         holder.imgLock.visibility = View.VISIBLE
+                        if(showLock) {
+                            holder.imgLock.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getLock()))
+                        }
                         holder.progressBar.visibility = View.GONE
                         holder.imgRoute.visibility = View.GONE
                         holder.textRoute.setTextColor(Color.parseColor("#FFFFFF"))
-                        holder.textRoute.setOnClickListener {
-                            openTest.onClick(mainContentModel.ch_IdRoadmap, mainContentModel.ch_IdTest, mainContentModel.ch_Paradas[0].ch_IdStop)
+                        if(!showLock) {
+                            holder.textRoute.setOnClickListener {
+                                openTest.onClick(mainContentModel.ch_IdRoadmap, mainContentModel.ch_IdTest, mainContentModel.ch_Paradas[0].ch_IdStop)
+                            }
                         }
                     }
                 }
@@ -252,12 +264,18 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                     6 -> {
                         holder.textRoute.text = mainContentModel.ch_NameRoute.uppercase()
                         holder.imgLock.visibility = View.VISIBLE
+                        if(showLock) {
+                            holder.imgLock.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getLock()))
+                        }
                         holder.progressBar.visibility = View.GONE
                         holder.imgRoute.visibility = View.GONE
                         holder.textRoute.setTextColor(Color.parseColor("#FFFFFF"))
-                        holder.textRoute.setOnClickListener {
-                            openTest.onClick(mainContentModel.ch_IdRoadmap, mainContentModel.ch_IdTest, mainContentModel.ch_Paradas[0].ch_IdStop)
+                        if(!showLock) {
+                            holder.textRoute.setOnClickListener {
+                                openTest.onClick(mainContentModel.ch_IdRoadmap, mainContentModel.ch_IdTest, mainContentModel.ch_Paradas[0].ch_IdStop)
+                            }
                         }
+
                     }
                 }
             }
@@ -271,12 +289,18 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                     6 -> {
                         holder.textRoute.text = mainContentModel.ch_NameRoute.uppercase()
                         holder.imgLock.visibility = View.VISIBLE
+                        if(showLock) {
+                            holder.imgLock.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getLock()))
+                        }
                         holder.progressBar.visibility = View.GONE
                         holder.imgRoute.visibility = View.GONE
                         holder.textRoute.setTextColor(Color.parseColor("#FFFFFF"))
-                        holder.textRoute.setOnClickListener {
-                            openTest.onClick(mainContentModel.ch_IdRoadmap, mainContentModel.ch_Paradas[0].ch_Type, mainContentModel.ch_Paradas[0].ch_IdStop)
+                        if(!showLock) {
+                            holder.textRoute.setOnClickListener {
+                                openTest.onClick(mainContentModel.ch_IdRoadmap, mainContentModel.ch_Paradas[0].ch_Type, mainContentModel.ch_Paradas[0].ch_IdStop)
+                            }
                         }
+
                     }
                 }
             }
@@ -287,7 +311,8 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
         context: Context,
         typeAccount: TypeAccount,
         mainStopModel: ParadasModel,
-        viewHolder: MainStopsAdapter.ViewHolder
+        viewHolder: MainStopsAdapter.ViewHolder,
+        showLock: Boolean
     ) {
         when(typeAccount){
             TypeAccount.HAVOLINE -> {
@@ -303,6 +328,9 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                 if(mainStopModel.ch_StatusLesson3 == 1) {
                     viewHolder.statusLesson3.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getCheckHavoline()))
                 }
+                if(showLock) {
+                    viewHolder.lockImage.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getLock()))
+                }
             }
             TypeAccount.TEXACO -> {
                 viewHolder.statusLesson1.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getDisabledPlay()))
@@ -316,6 +344,9 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                 }
                 if(mainStopModel.ch_StatusLesson3 == 1) {
                     viewHolder.statusLesson3.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getCheckHavoline()))
+                }
+                if(showLock) {
+                    viewHolder.lockImage.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getLock()))
                 }
             }
 
@@ -333,6 +364,9 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                 if(mainStopModel.ch_StatusLesson3 == 1) {
                     viewHolder.statusLesson3.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getCheckDelo()))
                 }
+                if(showLock) {
+                    viewHolder.lockImage.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getLock()))
+                }
             }
             TypeAccount.HAVOLINE4T -> {
                 viewHolder.statusLesson1.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getDisabledPlay()))
@@ -346,6 +380,9 @@ class ApplyUIMainContentImpl: ApplyUIMainContent {
                 }
                 if(mainStopModel.ch_StatusLesson3 == 1) {
                     viewHolder.statusLesson3.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getCheckHavoline()))
+                }
+                if(showLock) {
+                    viewHolder.lockImage.setImageDrawable(AppCompatResources.getDrawable(context, DrawableUtils.getLock()))
                 }
             }
         }

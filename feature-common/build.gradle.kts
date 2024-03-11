@@ -1,11 +1,13 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
-    namespace = General.nameSpace
+    namespace = "com.trend.feature_common"
     compileSdk = General.compileSDK.toInt()
 
     defaultConfig {
@@ -48,10 +50,19 @@ dependencies {
     implementation(Dependencies.androidRoomKtx)
     implementation(Dependencies.androidRoomRx)
 
+    // Lifecycle
+    implementation(Dependencies.androidLifeCycleLivedata)
+    implementation(Dependencies.androidLifeCycleViewModel)
+    implementation(Dependencies.androidLifeCycle_Activity)
+
     // Retrofit
     implementation(Dependencies.androidRetrofit)
     implementation(Dependencies.androidGson)
     implementation(Dependencies.androidInterceptor)
     implementation(Dependencies.androidCoroutinesKotlinx)
     implementation(Dependencies.androidCoroutinesKotlinxCore)
+
+    // Hilt
+    implementation(Dependencies.androidHiltCore)
+    kapt(Dependencies.androidHiltCompiler)
 }

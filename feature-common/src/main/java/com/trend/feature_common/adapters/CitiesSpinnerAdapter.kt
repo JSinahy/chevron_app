@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.trend.chevron.R
+import com.trend.feature_common.R
 import com.trend.feature_common.models.CitiesModel
 
 class CitiesSpinnerAdapter(ctx: Context, list: ArrayList<CitiesModel>, val edit: Boolean): ArrayAdapter<CitiesModel>(ctx, 0, list) {

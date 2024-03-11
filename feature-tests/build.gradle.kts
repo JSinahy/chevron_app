@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = General.nameSpace
+    namespace = "com.trend.feature_test"
     compileSdk = General.compileSDK.toInt()
 
     defaultConfig {
@@ -72,5 +72,6 @@ dependencies {
     implementation(Dependencies.androidFacebookSDK)
     implementation(Dependencies.androidFacebookShareSDK)
 
-    implementation(project(Modules.moduleCommon))
+   //implementation(project(Modules.moduleCommon))
+
 }

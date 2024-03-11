@@ -2,7 +2,7 @@ package com.trend.feature_common.extensiones
 
 import android.annotation.SuppressLint
 import android.widget.RelativeLayout
-import com.trend.chevron.R
+import com.trend.feature_common.R
 
 @SuppressLint("UseCompatLoadingForDrawables")
 fun RelativeLayout.setBackgroundDelo() {

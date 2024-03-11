@@ -7,7 +7,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import com.trend.chevron.databinding.ActivityMainContentBinding
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
 import com.trend.feature_common.utils.AlertDialogHelper
@@ -19,6 +18,7 @@ import com.trend.feature_common.utils.PreferencesHelper.lastNameUser
 import com.trend.feature_common.utils.PreferencesHelper.nameUser
 import com.trend.feature_common.utils.PreferencesHelper.timeToStudy
 import com.trend.feature_common.utils.PreferencesHelper.typeAccount
+import com.trend.feature_content.databinding.ActivityMainContentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

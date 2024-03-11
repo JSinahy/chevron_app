@@ -11,22 +11,19 @@ import android.view.View
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
-import com.trend.chevron.databinding.ActivityMainShowContentBinding
 import com.trend.feature_common.extensiones.ProgressUtil
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
 import com.trend.feature_common.models.StatusLessonsRequest
 import com.trend.feature_common.network.BaseEvent
+import com.trend.feature_content.databinding.ActivityMainShowContentBinding
 import com.trend.feature_content.ui.home.ApplyUIMainContent
 import com.trend.feature_content.ui.home.ApplyUIMainContentImpl
-import com.trend.feature_tests.ui.MainExamenActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.io.IOException
 

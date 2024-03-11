@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = General.nameSpace
+    namespace = "com.trend.feature_content"
     compileSdk = General.compileSDK.toInt()
 
     defaultConfig {
@@ -45,6 +45,7 @@ dependencies {
     implementation(Dependencies.androidMaterial)
     implementation(Dependencies.androidNavigationFragment)
     implementation(Dependencies.androidNavigationUI)
+    implementation(Dependencies.androidServiceLocation)
     testImplementation(Dependencies.androidJUnit)
     androidTestImplementation(Dependencies.androidExtUnit)
     androidTestImplementation(Dependencies.androidEspresso)
@@ -66,9 +67,13 @@ dependencies {
     implementation(Dependencies.androidCoroutinesKotlinx)
     implementation(Dependencies.androidCoroutinesKotlinxCore)
 
+    // Facebook
+    implementation(Dependencies.androidFacebookSDK)
+    implementation(Dependencies.androidFacebookShareSDK)
+
     // Glide
     implementation(Dependencies.androidGlide)
 
     implementation(project(Modules.moduleCommon))
-    implementation(project(Modules.moduleTests))
+    //implementation(project(Modules.moduleTests))
 }

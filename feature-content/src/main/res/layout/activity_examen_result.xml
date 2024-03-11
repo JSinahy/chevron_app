@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/havoline_texture_background"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/transparent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ruta 1"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gotham_bold"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:textSize="18sp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gotham_bold"
+                android:layout_centerVertical="true"
+                android:textSize="18sp"
+                android:layout_alignParentEnd="true"
+                android:text="Prueba Experto"
+                android:layout_marginEnd="16dp"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/globe_relative"
+        android:layout_marginTop="84dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_globe"
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:src="@drawable/generic_img_globe_finish_black"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_result"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_thumb_up_yellow"
+            android:textAlignment="center"
+            android:textColor="#FFD200"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:gravity="center"
+            android:id="@+id/text_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_result"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="¡Felicidades\nhas desbloqueado la\nsiguiente parada\nestas cerca de\nconvertirte en todo un\nExperto!"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_message"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/gotham_book"
+            android:text="Haz aprobado,\npuedes pasar a la\nsiguiente ruta."
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/character_image"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/havoline_img_character"
+        android:layout_below="@+id/globe_relative" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/character_image"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/generic_yellow_button_rounded_corners"
+        android:drawableEnd="@drawable/ic_btn_play"
+        android:fontFamily="@font/gotham_bold"
+        android:paddingEnd="32dp"
+        android:text="Continuar" />
+</RelativeLayout>

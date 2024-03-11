@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.trend.chevron.R
+import com.trend.feature_common.R
 import com.trend.feature_common.models.StudyTimeModel
 
 class StudyTimeAdapter(val ctx: Context, list: ArrayList<StudyTimeModel>, val edit: Boolean): ArrayAdapter<StudyTimeModel>(ctx, 0, list) {

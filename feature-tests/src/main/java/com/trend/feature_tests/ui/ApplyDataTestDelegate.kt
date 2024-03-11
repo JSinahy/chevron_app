@@ -6,12 +6,13 @@ import android.graphics.Color
 import android.view.View
 import android.widget.RelativeLayout
 import androidx.appcompat.content.res.AppCompatResources
-import com.trend.chevron.databinding.ActivityExamenBinding
+
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.models.CorrectAndIncorrectAnswers
 import com.trend.feature_common.models.CorrectIncorrect
 import com.trend.feature_common.models.TestModel
 import com.trend.feature_common.utils.DrawableUtils
+import com.trend.feature_test.databinding.ActivityExamenBinding
 import com.trend.feature_tests.ui.ExamenActivity.Companion.corrects
 
 /**

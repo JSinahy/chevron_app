@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "experto-chevron",
+  "private_key_id": "834ee4a6b120db3499c051864a1be1802ce6ae79",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCa6wIgklckqhvP\nQXdObh0A/aJ5yDaMf/KbhpxREkcWLcX96PmikH/uthsHaTC5LEzwi4G15bLBVVGW\nN/xZzcVz3pZAjXGDYcXMHH5xWIbs4oRmTNjLfLO1xbliRp8i0Tf/ENKRMkOeCxmq\ndoKW/PLZaHoNY7j0LJu1nqa3f/uYVNqVLKfYNmneds+L9TniZS3TfKnMoNM7y+up\nTYarQHkSxx8WyPO7WCTMLBlduRSsGJ1HfPvet1XsusHDxGASHi9Yg8AGKaK324jR\nm5PL2UBAdbhrlK/R5FLkWZpTUgGlN5TBPjkX6SVt0rJWqo93oLZPASQ0SJW0/O7s\nnGOPXVRjAgMBAAECggEAEMy5b1TPVG+KEoCz8nJofMoEi5ZVrAjYA1umqfgEc3hF\nR1Kzd5iZ9wYSikwy93HBajiGuXYOW37oGRU7LXXuGrGhs6BjFe9NZuQUJjCGeTvb\nRcjBndeJGYY2o1yrNzhfDS8C1rIPuRzVDLJLWRpXL5Jv4fHVhc0smZZ5195uJ0ep\nKsbmXTLKKqRXjJmNQpC+fXsqvwy/wiudAU2iwFk/3zS8tl2D7jqgx5DbbTSHtsav\nO8U4zK6JEfwBiLaKup6/zFCWaWxAZvjlg2jqsbBI0vBHLu2sQxzUd5lOdvVjGp75\nx+l8XWtfEmRQCuSKF/Jq6g0Wwa4I8ZbRuzERqAlP0QKBgQDQ29wFCk8twqc1N4Or\npV4y04kj6XOrp/OqQdU0yMqahO6WpsfjcKl8A71EYTqu78A7ECA3SHtloGuG1EPM\nzS6oVF800uRbeOXoGe/YQvLwbabaxX/QVHiksyA91p1+k+jlT0CGPjyMNiZP6Jgy\nj0iZpPvc+5xKvGBJxmSV72vCmwKBgQC94mBWAR6MtStXTBVGew4TFvHk1JsrSmKI\neez0DQl5iQh6yCzIQmCaFFeG2toSxMu41HgD4QBVSCDaTUL/8DKMDonzxLLlXon6\n5w8JyUUHMow5D+p4OdedLM05dyCSe/ZP0GRZFv28WKeT/LqwUHZEMrgzWKGJQ8KH\nCRWWwuKN2QKBgQDJxJw5AkybmICQGKFLIOZvk4vY9Z6ZJhdvU0n1RET2IZWcVGKm\nhiA1fidJ9+QJO/QpGtsEjTEobGF0T3twTofUdi3DijixZYo1P1lFQugO/N9EWaew\nSuqBscpj8wETVzCW1okvJtC3Y1h/uePOdD1esNPgF/JVAMbEfrSNZE5mIQKBgQCf\nFdk2VQu+QU8FfYXZneFF1xRkbkdudoyk4NnIAmAsxcUn8SurwAjlLiPCpPrNfLld\nqgy+2zSHPr3fh5mZiikfNFMZu3NSPemGHy13OnwtsojOieocPgHJ+i4adhcBAwBz\nEBnylhORSAlmL/hNHaxoKMIwqpHzyaRhtBe1TqO2yQKBgFlPKKpYfjn6hppxWqYC\nCDUZMqC5lPZhfirlgSYcdsDRIP9/ZPJiOVgVe7P4iwBlJr/1YXLUOuxfgMWwCpcv\nvVISLy8zGHZgG0H0TCxsQcncs4qHLtTY8JTW0CWzDqcm1MFvVVqEv/ty/nsBKS1j\n45d5Zv01x/8R1J/BCguAuWfO\n-----END PRIVATE KEY-----\n",
+  "client_email": "app-distribution@experto-chevron.iam.gserviceaccount.com",
+  "client_id": "106094492876643558803",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/app-distribution%40experto-chevron.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -10,7 +10,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.trend.chevron.databinding.ActivityLoginOtpactivityBinding
+import com.trend.feature_authentication.databinding.ActivityLoginOtpactivityBinding
 import com.trend.feature_common.extensiones.ProgressUtil
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants

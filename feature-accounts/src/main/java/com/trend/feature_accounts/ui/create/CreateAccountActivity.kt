@@ -12,7 +12,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.trend.chevron.databinding.ActivityCreateAccountBinding
+import com.trend.feature_accounts.databinding.ActivityCreateAccountBinding
 import com.trend.feature_common.adapters.CitiesSpinnerAdapter
 import com.trend.feature_common.adapters.CountriesCellphoneDataAdapter
 import com.trend.feature_common.adapters.CountriesSpinnerAdapter

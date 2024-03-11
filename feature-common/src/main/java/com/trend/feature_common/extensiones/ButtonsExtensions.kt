@@ -2,7 +2,7 @@ package com.trend.feature_common.extensiones
 
 import android.annotation.SuppressLint
 import android.widget.Button
-import com.trend.chevron.R
+import com.trend.feature_common.R
 
 /** Set background buttons **/
 @SuppressLint("UseCompatLoadingForDrawables")

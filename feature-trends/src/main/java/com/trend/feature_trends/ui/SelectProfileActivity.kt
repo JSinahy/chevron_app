@@ -4,14 +4,12 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Color
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationRequest
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -19,26 +17,27 @@ import android.text.TextPaint
 import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
-import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.CancellationToken
 import com.google.android.gms.tasks.CancellationTokenSource
 import com.google.android.gms.tasks.OnTokenCanceledListener
-import com.trend.chevron.R
-import com.trend.chevron.databinding.ActivitySelectProfileBinding
 import com.trend.feature_accounts.ui.create.CreateAccountActivity
+import com.trend.feature_common.extensiones.ProgressUtil
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
-import com.trend.feature_common.extensiones.openActivity
+import com.trend.feature_common.extensiones.setGrayScaleColor
+import com.trend.feature_common.network.BaseEvent
 import com.trend.feature_common.permissions.PermissionsHelper
+import com.trend.feature_trends.R
+import com.trend.feature_trends.databinding.ActivitySelectProfileBinding
+import kotlinx.coroutines.launch
 
 class SelectProfileActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -48,6 +47,8 @@ class SelectProfileActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var managePermissions: PermissionsHelper
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private val listCountries = listOf("EL SALVADOR","GUATEMALA","HONDURAS","PANAMA", "COLOMBIA")
+    private var FROM = -1
+    private val viewModel: SelectProfileViewModel by viewModels()
 
     @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +60,9 @@ class SelectProfileActivity : AppCompatActivity(), View.OnClickListener {
         setupListener()
         setUrlForDocumentation()
         setupPermissions()
+        getExtrasFromAnotherActivities()
+        setupObservers()
+
     }
 
     private fun setupListener() {
@@ -171,5 +175,37 @@ class SelectProfileActivity : AppCompatActivity(), View.OnClickListener {
         return binding.checkBox.isChecked
     }
 
+    private fun getExtrasFromAnotherActivities() {
+        intent.extras?.let {
+            FROM = it.getInt(constants.FROM)
+        }
+    }
 
+    private fun setupObservers() {
+        lifecycleScope.launch {
+            viewModel.getRoadmapCompleted(1)
+            viewModel.trends.collect {
+                when(it){
+                    is BaseEvent.Init -> {}
+                    is BaseEvent.Loading -> { ProgressUtil.showLoading(this@SelectProfileActivity )}
+                    is BaseEvent.Success -> {
+                        ProgressUtil.hideLoading()
+                        it.data.data.forEach {item ->
+                            if(item.ch_Passed == 1) {
+                                when(item.ch_IdEnterprise) {
+                                    1 -> { binding.imageHavoline.setGrayScaleColor() }
+                                    2 -> { binding.imageHavoline4t.setGrayScaleColor() }
+                                    3 -> { binding.imageDelo.setGrayScaleColor() }
+                                    4 -> { binding.imageTexaco.setGrayScaleColor() }
+                                }
+                            }
+                        }
+                    }
+                    is BaseEvent.Error -> {
+                        ProgressUtil.hideLoading()
+                    }
+                }
+            }
+        }
+    }
 }

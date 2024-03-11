@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
-    <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">https://expertochevron.com</domain>
-        <domain includeSubdomains="true">167.71.144.31</domain>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">expertochevron.com</domain>
+        <trust-anchors>
+            <certificates src="@raw/chevron" />
+        </trust-anchors>
     </domain-config>
 </network-security-config>

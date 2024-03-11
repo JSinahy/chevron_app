@@ -3,7 +3,8 @@ package com.trend.feature_accounts.ui.create
 import android.content.Context
 import android.content.SharedPreferences
 import android.view.View
-import com.trend.chevron.databinding.ActivityCreateAccountBinding
+import com.trend.feature_accounts.databinding.ActivityCreateAccountBinding
+
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.utils.PreferencesHelper.cellPhone
 import com.trend.feature_common.utils.PreferencesHelper.email

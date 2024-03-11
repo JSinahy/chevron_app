@@ -9,7 +9,6 @@ import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.trend.chevron.R
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.models.MainContentModel
 import com.trend.feature_common.utils.DrawableUtils
@@ -44,7 +43,8 @@ class MainRoutesAdapter(val context: Context,
             holder,
             type,
             dataRoutes[position],
-            openTest
+            openTest,
+            showLock(dataRoutes)
         )
 
         /** Para aumentar la barra de progreso **/
@@ -81,6 +81,16 @@ class MainRoutesAdapter(val context: Context,
             }, dataRoutes[position].ch_IdRoadmap)
         adapter.setData(dataRoutes[position].ch_Paradas)
         holder.recycler.adapter = adapter
+    }
+
+    private fun showLock(dataRoutes: ArrayList<MainContentModel>): Boolean {
+        var show = false
+        dataRoutes.forEach { ruta ->
+            ruta.ch_Paradas.forEach { paradas ->
+                if(paradas.ch_IdStatus == "A") show = true
+            }
+        }
+        return show
     }
 
     override fun getItemCount(): Int {

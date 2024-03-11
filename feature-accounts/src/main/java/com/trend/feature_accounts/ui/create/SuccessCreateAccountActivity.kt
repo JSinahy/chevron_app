@@ -2,7 +2,7 @@ package com.trend.feature_accounts.ui.create
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.trend.chevron.databinding.ActivitySuccessCreateAccountBinding
+import com.trend.feature_accounts.databinding.ActivitySuccessCreateAccountBinding
 import com.trend.feature_authentication.ui.cellphone.LoginCellphoneActivity
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.openActivity

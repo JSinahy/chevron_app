@@ -3,12 +3,13 @@ package com.trend.feature_tests.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.trend.chevron.databinding.ActivityMainExamenBinding
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
 import com.trend.feature_common.extensiones.getCardinalNumber
+import com.trend.feature_test.databinding.ActivityMainExamenBinding
 
-class MainExamenActivity : AppCompatActivity(), ApplyUITestContent by ApplyUITestContentImpl() {
+class MainExamenActivity() : AppCompatActivity(), ApplyUITestContent by ApplyUITestContentImpl() {
+
     private lateinit var binding: ActivityMainExamenBinding
 
     private var IdRoute: Int = 0

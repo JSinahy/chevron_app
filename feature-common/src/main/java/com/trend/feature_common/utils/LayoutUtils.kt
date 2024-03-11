@@ -1,6 +1,6 @@
 package com.trend.feature_common.utils
 
-import com.trend.chevron.R
+import com.trend.feature_common.R
 
 object LayoutUtils {
     fun getItemHavolineLayout(): Int {

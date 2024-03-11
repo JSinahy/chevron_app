@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
     id("dagger.hilt.android.plugin")
+    id("com.google.firebase.appdistribution")
     kotlin("kapt")
 }
 
@@ -35,6 +36,12 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("release")
             isDebuggable = false
+
+            firebaseAppDistribution {
+                artifactType = "APK"
+                releaseNotesFile = "./notes.txt"
+                testers = "jslaraestudillo@gmail.com"
+            }
         }
     }
     compileOptions {
@@ -67,9 +74,8 @@ dependencies {
     kapt(Dependencies.androidHiltCompiler)
 
     implementation(project(Modules.moduleCommon))
-    implementation(project(Modules.moduleAccounts))
-    implementation(project(Modules.moduleAuthentication))
+    //implementation(project(Modules.moduleAuthentication))
     implementation(project(Modules.moduleContent))
-    implementation(project(Modules.moduleTests))
-    implementation(project(Modules.moduleTrends))
+    //implementation(project(Modules.moduleTrends))
+    //implementation(project(Modules.moduleTests))
 }

@@ -13,6 +13,33 @@
             android:exported="false"
             android:label="@string/title_activity_main_content"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.trend.feature_content.ui.profiles.SelectProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.trend.feature_content.ui.examenes.ExamenActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.trend.feature_content.ui.examenes.ExamenResultActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.trend.feature_content.ui.examenes.MainExamenActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.trend.feature_content.ui.examenes.ShareExamenResultActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.trend.feature_authentication.ui.cellphone.LoginCellphoneActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.trend.feature_authentication.ui.otp.LoginOTPActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.trend.feature_content.ui.accounts.CreateAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.trend.feature_content.ui.accounts.SuccessCreateAccountActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

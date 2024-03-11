@@ -10,4 +10,10 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="text_need_help">¿Necesitas ayuda?</string>
+
+    <string name="facebook_app_id">278187381944610</string>
+    <string name="facebook_client_token">1f6a5ce06d763ebd2a115eed539581bd</string>
+    <string name="facebook_application_id">278187381944610</string>
 </resources>

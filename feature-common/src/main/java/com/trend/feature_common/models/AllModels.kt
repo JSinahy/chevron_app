@@ -132,3 +132,21 @@ data class CorrectIncorrect(
     var correct: String,
     var result: Boolean
 )
+
+data class CustomerUpdateTrendRequest(
+    val id_customer: Int,
+    val id_before_enterprise: Int,
+    val id_new_enterprise: Int
+)
+
+data class TrendsCompletedResponse(
+    val data: List<TrendsCompletedModel>
+): GenericResponse()
+
+
+data class TrendsCompletedModel(
+    val ch_IdEnterprise: Int,
+    val ch_Name: String,
+    val ch_Qty: Int,
+    val ch_Passed: Int
+)

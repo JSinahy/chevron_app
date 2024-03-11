@@ -52,4 +52,8 @@ object Dependencies {
     // Facebook
     val androidFacebookSDK by lazy { "com.facebook.android:facebook-android-sdk:latest.release" }
     val androidFacebookShareSDK by lazy { "com.facebook.android:facebook-share:latest.release" }
+
+    // Firebase Distribution
+
+
 }

@@ -1,6 +1,6 @@
 package com.trend.feature_common.utils
 
-import com.trend.chevron.R
+import com.trend.feature_common.R
 
 object DrawableUtils {
     fun getShieldYellow1() = R.drawable.ic_shield_yellow_1

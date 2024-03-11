@@ -1,8 +1,5 @@
 package com.trend.feature_content.ui
 
-import androidx.appcompat.content.res.AppCompatResources.getDrawable
-import com.trend.chevron.R
-import com.trend.chevron.databinding.ActivityMainContentBinding
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.setBackgroundDelo
 import com.trend.feature_common.extensiones.setBackgroundHavoline
@@ -11,6 +8,7 @@ import com.trend.feature_common.extensiones.setBackgroundTexaco
 import com.trend.feature_common.extensiones.setDeloButtonBackground
 import com.trend.feature_common.extensiones.setHavoline4tButtonBackground
 import com.trend.feature_common.extensiones.setTexacoButtonBackground
+import com.trend.feature_content.databinding.ActivityMainContentBinding
 
 interface ApplyUIMainContentDelegate {
     fun applyUISideBar(

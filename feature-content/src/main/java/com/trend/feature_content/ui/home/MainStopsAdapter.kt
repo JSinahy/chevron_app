@@ -14,6 +14,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
 import com.trend.feature_common.extensiones.TypeAccount
+import com.trend.feature_common.models.MainContentModel
 import com.trend.feature_common.models.ParadasModel
 import com.trend.feature_common.utils.DrawableUtils
 import com.trend.feature_common.utils.LayoutUtils
@@ -41,6 +42,7 @@ class MainStopsAdapter(val click: HomeFragment.OnClickListener,
 
     override fun onBindViewHolder(holder: MainStopsAdapter.ViewHolder, position: Int) {
         val item = dataStops[position]
+        val showLockIcon = showLock(dataStops)
         if(item.ch_Type == 0){
             holder.lockImage.visibility = View.GONE
 
@@ -54,7 +56,9 @@ class MainStopsAdapter(val click: HomeFragment.OnClickListener,
                 context = holder.lockImage.context,
                 typeAccount = type,
                 mainStopModel = item,
-                viewHolder = holder
+                viewHolder = holder,
+                showLock = showLockIcon
+
             )
 
             holder.text_1.setOnClickListener {
@@ -73,33 +77,39 @@ class MainStopsAdapter(val click: HomeFragment.OnClickListener,
             holder.textSubtitle.visibility = View.INVISIBLE
             holder.lockImage.visibility = View.VISIBLE
 
-            holder.textTitle.updateLayoutParams<RelativeLayout.LayoutParams> {
-               bottomMargin = 8
-            }
-
-            if(item.ch_IdStatus == "A") {
-                holder.lockImage.setImageDrawable(AppCompatResources.getDrawable(holder.textTitle.context, DrawableUtils.getLock()))
-            }
-
-            when(type) {
-                TypeAccount.HAVOLINE -> {
-                    holder.textTitle.setTextColor(Color.parseColor("#FFD200"))
-                }
-                TypeAccount.TEXACO -> {
-                    holder.textTitle.setTextColor(Color.parseColor("#FFFFFF"))
-                }
-                else -> {
-                    holder.textTitle.setTextColor(Color.parseColor("#808080"))
+            if(showLockIcon) {
+                setTextColorWhenLockUnlock(holder, "#808080")
+                holder.lockImage.setImageDrawable(AppCompatResources.getDrawable(holder.lockImage.context, DrawableUtils.getLock()))
+            } else {
+                setTextColorWhenLockUnlock(holder, "#FFFFFF")
+                holder.textTitle.setOnClickListener {
+                    clickRoute.onClick(roadMap, item.ch_Type, item.ch_IdStop)
                 }
             }
-
             holder.textTitle.text = item.ch_NameStop + " " + roadMap
-
-            holder.textTitle.setOnClickListener {
-                clickRoute.onClick(roadMap, item.ch_Type, item.ch_IdStop)
-            }
-
         }
+    }
+
+    private fun setTextColorWhenLockUnlock(holder: ViewHolder, color: String) {
+        when(type) {
+            TypeAccount.HAVOLINE -> {
+                holder.textTitle.setTextColor(Color.parseColor(color))
+            }
+            TypeAccount.TEXACO -> {
+                holder.textTitle.setTextColor(Color.parseColor(color))
+            }
+            else -> {
+                holder.textTitle.setTextColor(Color.parseColor(color))
+            }
+        }
+    }
+
+    private fun showLock(paradas: ArrayList<ParadasModel>): Boolean {
+        var show = false
+        paradas.forEach { item ->
+            if(item.ch_IdStatus == "A") show = true
+        }
+        return show
     }
 
     override fun getItemCount(): Int {

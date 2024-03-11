@@ -4,10 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.view.View
 import androidx.appcompat.content.res.AppCompatResources
-import com.trend.chevron.databinding.ActivityExamenBinding
-import com.trend.chevron.databinding.ActivityExamenResultBinding
-import com.trend.chevron.databinding.ActivityMainExamenBinding
-import com.trend.chevron.databinding.ActivityShareExamenResultBinding
+
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.setBackgroundDelo
 import com.trend.feature_common.extensiones.setBackgroundHavoline4t
@@ -22,6 +19,11 @@ import com.trend.feature_common.extensiones.setHavolineButtonBackground
 import com.trend.feature_common.extensiones.setTexacoButtonBackground
 import com.trend.feature_common.extensiones.setTexacoWhiteButtonBackground
 import com.trend.feature_common.utils.DrawableUtils
+import com.trend.feature_test.databinding.ActivityExamenBinding
+import com.trend.feature_test.databinding.ActivityExamenResultBinding
+import com.trend.feature_test.databinding.ActivityMainExamenBinding
+import com.trend.feature_test.databinding.ActivityShareExamenResultBinding
+import com.trend.feature_tests.ui.ExamenActivity.Companion.getTypeAssesment
 
 /**
  * Estos delegates estan mas enfocados a cuando uno quiere comprobar una respuesta
@@ -246,7 +248,7 @@ class ApplyUITestContentImpl: ApplyUITestContent {
             }
             else -> ""
         }
-        val limit = if(IdRoute >= 6) 10 else 6
+        val limit = getTypeAssesment(IdRoute)
         if(califications >= limit) {
             when(typeAccount) {
                 TypeAccount.TEXACO -> binding.imageResult.setImageDrawable(AppCompatResources.getDrawable(binding.root.context, DrawableUtils.getThumbUpRed()))

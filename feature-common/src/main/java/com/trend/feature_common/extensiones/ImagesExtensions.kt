@@ -2,10 +2,12 @@ package com.trend.feature_common.extensiones
 
 import android.annotation.SuppressLint
 import android.graphics.Color
+import android.graphics.ColorMatrix
+import android.graphics.ColorMatrixColorFilter
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import com.trend.chevron.R
+import com.trend.feature_common.R
 
 
 /** Set bubbles **/
@@ -170,6 +172,14 @@ fun ImageView.setCarImage() {
 @SuppressLint("UseCompatLoadingForDrawables")
 fun ImageView.setTruckImage() {
     setImageDrawable(resources.getDrawable(R.drawable.ic_truck))
+}
+
+fun ImageView.setGrayScaleColor() {
+    val colorMatrix =  ColorMatrix()
+    colorMatrix.setSaturation(0f)
+    val filter = ColorMatrixColorFilter(colorMatrix)
+    this.setColorFilter(filter)
+
 }
 
 

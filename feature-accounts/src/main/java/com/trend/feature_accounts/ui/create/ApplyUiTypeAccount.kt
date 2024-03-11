@@ -2,9 +2,8 @@ package com.trend.feature_accounts.ui.create
 
 import android.graphics.Color
 import android.view.View
-import com.trend.chevron.R
-import com.trend.chevron.databinding.ActivityCreateAccountBinding
-import com.trend.chevron.databinding.ActivitySuccessCreateAccountBinding
+import com.trend.feature_accounts.databinding.ActivityCreateAccountBinding
+import com.trend.feature_accounts.databinding.ActivitySuccessCreateAccountBinding
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.TypeImage
 import com.trend.feature_common.extensiones.setBackgroundDelo

@@ -3,7 +3,7 @@ package com.trend.feature_common.extensiones
 import android.content.Context
 import androidx.appcompat.content.res.AppCompatResources
 import com.google.android.material.appbar.AppBarLayout
-import com.trend.chevron.R
+import com.trend.feature_common.R
 
 fun AppBarLayout.setBackgroundHavoline(context: Context) {
     background = AppCompatResources.getDrawable(context, R.drawable.generic_background_black)

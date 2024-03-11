@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.trend.chevron.databinding.FragmentGalleryBinding
+import com.trend.feature_content.databinding.FragmentGalleryBinding
 
 class GalleryFragment : Fragment() {
 

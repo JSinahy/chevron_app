@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/delo_gradient_background">
+
+    <LinearLayout
+        android:id="@+id/linear_texts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="@string/text_write"
+            android:textAlignment="center"
+            android:textColor="#00D4FF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/text_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gotham_book"
+            android:text="@string/label_write_code"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/ic_otp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_texts"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/generic_textview_background_white"
+        android:orientation="horizontal"
+        android:paddingStart="32dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="8dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otp1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:fontFamily="@font/gotham_bold"
+            android:hint="@string/text_middle_dash"
+            android:inputType="number"
+            android:maxLength="1"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="#00CAF9"
+            android:textColorHint="#00CAF9"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:ignore="LabelFor" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otp2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:fontFamily="@font/gotham_bold"
+            android:hint="@string/text_middle_dash"
+            android:inputType="number"
+            android:maxLength="1"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="#00CAF9"
+            android:textColorHint="#00CAF9"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:ignore="LabelFor" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otp3"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:fontFamily="@font/gotham_bold"
+            android:hint="@string/text_middle_dash"
+            android:inputType="number"
+            android:maxLength="1"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="#00CAF9"
+            android:textColorHint="#00CAF9"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:ignore="LabelFor" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otp4"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:fontFamily="@font/gotham_bold"
+            android:hint="@string/text_middle_dash"
+            android:inputType="number"
+            android:maxLength="1"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="#00CAF9"
+            android:textColorHint="#00CAF9"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:ignore="LabelFor" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_no_recibido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_otp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/gotham_bold"
+        android:text="@string/text_code_not_received"
+        android:textColor="#00CAF9"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/btn_create_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_no_recibido"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/generic_btn_otp_background"
+        android:fontFamily="@font/gotham_bold"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/text_create_here"
+        android:textColor="#00CAF9"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_create_otp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gotham_bold"
+        android:text="@string/text_need_help"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/chevron_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/generic_img_logo_chevron" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:gravity="center"
+        android:id="@+id/btn_next"
+        style="@style/GenericButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chevron_logo"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/generic_blue_button"
+        android:fontFamily="@font/gotham_bold"
+        android:text="@string/text_next" />
+</RelativeLayout>

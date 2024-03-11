@@ -1,7 +1,7 @@
 package com.trend.feature_accounts.ui.create
 
 import android.widget.TextView
-import com.trend.chevron.databinding.ActivityCreateAccountBinding
+import com.trend.feature_accounts.databinding.ActivityCreateAccountBinding
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.models.CitiesModel
 import com.trend.feature_common.models.CountriesModel

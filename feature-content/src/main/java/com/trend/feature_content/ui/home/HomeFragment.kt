@@ -13,7 +13,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.trend.chevron.databinding.FragmentHomeBinding
 import com.trend.feature_common.extensiones.ProgressUtil
 import com.trend.feature_common.extensiones.TypeAccount
 import com.trend.feature_common.extensiones.constants
@@ -32,11 +31,13 @@ import com.trend.feature_common.utils.PreferencesHelper.isLogged
 import com.trend.feature_common.utils.PreferencesHelper.nameUser
 import com.trend.feature_common.utils.PreferencesHelper.timeToStudy
 import com.trend.feature_common.utils.PreferencesHelper.typeAccount
-import com.trend.feature_content.ui.information.FinishLessonActivity
+import com.trend.feature_content.databinding.FragmentHomeBinding
+import com.trend.feature_content.ui.examenes.MainExamenActivity
 import com.trend.feature_content.ui.information.MainShowContentActivity
-import com.trend.feature_tests.ui.MainExamenActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+
+
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(), ApplyUIMainContent by ApplyUIMainContentImpl() {
@@ -55,6 +56,11 @@ class HomeFragment : Fragment(), ApplyUIMainContent by ApplyUIMainContentImpl() 
     private var numRoute = 1
     private var stay: StopContinueModel? = null
     private var counter = 0
+
+    companion object {
+        var openActivityInterface = {}
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -10,3 +10,4 @@ fun Activity.openActivity(destiny: Class<*>, close: Boolean = false, args: Bundl
     })
     if(close) this.finish()
 }
+

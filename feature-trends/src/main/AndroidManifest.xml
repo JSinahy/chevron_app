@@ -3,7 +3,7 @@
     <application>
         <activity
             android:name="com.trend.feature_trends.ui.SelectProfileActivity"
-            android:exported="false" />
+            android:exported="true" />
     </application>
 
 </manifest>
